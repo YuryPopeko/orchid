@@ -30,10 +30,6 @@ body {
   	width: 1em;
 	height: 1em;
 	fill: currentColor;
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 header {
@@ -63,7 +59,6 @@ button.menu {
 	padding: 0;
 	border: none;
     background-color: transparent;
-    position: relative;
 }
 
 .icon-hamburger {
@@ -121,7 +116,6 @@ section.preview button {
 	background-color: #8c1057;
 	border: none;
 	padding: 0;
-	position: relative;
 }
 
 section.preview button:not(:last-of-type) {
