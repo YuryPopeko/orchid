@@ -57,7 +57,7 @@ header a[href*='tel:'] {
 
 button.menu {
 	padding: 0;
-	border: none;
+	border: 0;
     background-color: transparent;
 }
 
@@ -114,7 +114,7 @@ section.preview button {
 	height: 60px;
 	border-radius: 50%;
 	background-color: #8c1057;
-	border: none;
+	border: 0;
 	padding: 0;
 }
 
@@ -125,4 +125,33 @@ section.preview button:not(:last-of-type) {
 section.preview svg {
   color: #fff;
   font-size: 33px;
+}
+
+div[class*='modal-'] {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	transform: scale(0);
+	transition-duration: .2s;
+	transition-timing-function: ease-in-out;
+}
+
+div[class*='modal-'].open {
+	transform: initial;
+}
+
+div[class*='modal-'] .close {
+	border: 0;
+	padding: 0;
+	background-color: transparent;
+	position: absolute;
+	top: 50px;
+	right: 25px;
+	font-size: 16px;
+}
+
+iframe {
+	border: 0;
 }
