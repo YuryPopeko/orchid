@@ -9,4 +9,8 @@ document.addEventListener('click', function(e) {
 		const modalWindow = document.querySelector(modalClass);
 		modalWindow.classList.add('open')
 	}
-})
+});
+
+$('.owl-carousel').owlCarousel({
+	items: 1
+});
