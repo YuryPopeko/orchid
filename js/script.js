@@ -11,7 +11,39 @@ document.addEventListener('click', function(e) {
 	}
 });
 
-$('.owl-carousel').owlCarousel({
+
+
+$('.modal-gallery .owl-carousel').owlCarousel({
 	items: 1,
-	autoHeight: true
+	autoHeight: true,
+	dots: false
 });
+
+$('.girls .owl-carousel').owlCarousel({
+	items: 1,
+	autoHeight: true,
+	dots: false,
+	nav: true
+});
+
+$('.instagram .owl-carousel').owlCarousel({
+	items: 2,
+	dots: false
+});
+
+
+
+var map,
+	orchid = {lat: 59.9274324, lng: 30.3497684};
+function initMap() {
+	map = new google.maps.Map(document.getElementById('map'), {
+		center: orchid,
+		zoom: 17
+	});
+
+	var marker = new google.maps.Marker({
+    	position: orchid,
+		map: map,
+		icon: 'images/marker.png'
+    });
+}
