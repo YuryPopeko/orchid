@@ -25,6 +25,12 @@ body {
 	display: none;
 }
 
+.clearfix::after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
 [class*='icon-'] {
 	display: inline-block;
   	width: 1em;
@@ -122,6 +128,10 @@ section.preview button:not(:last-of-type) {
 	margin-right: 15px;
 }
 
+section.preview button:active {
+	background-color: rgb(228, 58, 157);
+}
+
 section.preview svg {
   color: #fff;
   font-size: 33px;
@@ -165,4 +175,66 @@ div[class*='modal-'] .owl-carousel {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+.resume-tabs .buttons {
+	background-color: rgb(181, 26, 125);
+	background-image: linear-gradient(90deg, rgb(181, 26, 125) 0%, rgb(228, 58, 157) 100%);
+	color: #fff;
+}
+
+.resume-tabs label {
+	display: block;
+	float: left;
+	width: 33.33%;
+	text-align: center;
+	font-size: 14px;
+	line-height: 1;
+	padding: 20px 15px;
+	position: relative;
+}
+
+.resume-tabs label:not(:last-of-type) {
+	border-right: 1px solid rgba(255, 255, 255, .2);
+}
+
+.resume-tabs label svg {
+	font-size: 40px;
+	margin-bottom: 5px;
+}
+
+.resume-tabs .content {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #ededed;
+}
+
+.resume-tabs .content p {
+	display: none;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #333;
+}
+
+.resume-tabs .content a {
+	color: #368fbe;
+}
+
+#masseuses:checked ~ .content .masseuses,
+#bar:checked ~ .content .bar,
+#interior:checked ~ .content .interior {
+	display: block;
+}
+
+#masseuses:checked ~ .buttons label[for='masseuses']::after,
+#bar:checked ~ .buttons label[for='bar']::after,
+#interior:checked ~ .buttons label[for='interior']::after {
+	content: '';
+	width: 7px;
+	height: 7px;
+	background-color: #ededed;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translate(-50%, 50%) rotate(45deg);
 }
