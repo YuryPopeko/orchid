@@ -26,7 +26,7 @@
 	</header>
 	<main>
 		<section class="preview">
-			<h1 class="wrapper main">Эротический массаж в салоне Орхидея</h1>
+			<h1 class="wrapper">Эротический массаж в салоне Орхидея</h1>
 			<p class="wrapper">Спасительный островок в мире суеты и будничных проблем</p>
 			<div>
 				<button class="modal-tour"><svg class="icon-tour"><use xlink:href="#icon-tour"></use></svg></button>
@@ -58,7 +58,7 @@
 			</div>
 		</div>
 		<section class="services">
-			<h1 class="wrapper">Услуги</h1>
+			<h2 class="wrapper">Услуги</h2>
 			<p class="wrapper">Выберите подходящую вам услугу</p>
 			<a href="">
 				<img src="images/services1.jpg">
@@ -76,6 +76,49 @@
 				<img src="images/services4.jpg">
 				<span class="wrapper">Сертификаты</span>
 			</a>
+		</section>
+		<section class="choose">
+			<h2 class="wrapper">Подберите массаж</h2>
+			<form method="post" class="wrapper">
+				<input type="checkbox" name="masseur" id="masseur" hidden>
+				<label for="masseur" class="switch">Выберите массажиста</label>
+				<div>
+					<span>Женщина</span>
+					<span>Мужчина</span>
+				</div>
+				<input type="checkbox" name="amount" id="amount" hidden>
+				<label for="amount" class="switch">Количество массажистов</label>
+				<div>
+					<span>1 массажист</span>
+					<span>2 массажиста</span>
+				</div>
+				<fieldset>
+					<legend>Продолжительность массажа</legend>
+					<div class="clearfix">
+						<input type="radio" name="duration" id="min60" hidden checked>
+						<label for="min60">60<br>мин</label>
+						<input type="radio" name="duration" id="min75" hidden>
+						<label for="min75">75<br>мин</label>
+						<input type="radio" name="duration" id="min90" hidden>
+						<label for="min90">90<br>мин</label>
+						<input type="radio" name="duration" id="min120" hidden>
+						<label for="min120">120<br>мин</label>
+					</div>
+				</fieldset>
+				<input type="submit" value="Подобрать" class="btn">
+			</form>
+			<div class="output wrapper">
+				<a href="">
+					<img src="images/program1.jpg">
+					<b>Авторская программа</b>
+					<span>9 900 руб.</span>
+				</a>
+				<a href="">
+					<img src="images/program2.jpg">
+					<b>Массаж ног “Ветка сакуры”</b>
+					<span>4 900 руб.</span>
+				</a>
+			</div>
 		</section>
 	</main>
 	<div class="modal-tour">
