@@ -12,5 +12,6 @@ document.addEventListener('click', function(e) {
 });
 
 $('.owl-carousel').owlCarousel({
-	items: 1
+	items: 1,
+	autoHeight: true
 });
