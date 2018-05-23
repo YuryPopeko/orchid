@@ -1,19 +1,30 @@
-document.querySelector('button.menu').onclick = function() {
-	document.body.classList.toggle('menu')
-}
-
-
-
 document.addEventListener('click', function(e) {
 	e = e || window.event;
 	const target = e.target;
 
 	if (target.closest('button.close')) {
 		target.closest('button.close').parentElement.classList.remove('open');
-	} else if (target.closest('[class*=modal-]')) {
+	}
+
+	else if (target.closest('[class*=modal-]')) {
 		const modalClass = 'div.modal-' + target.closest('[class*=modal-]').className.slice(6);
 		const modalWindow = document.querySelector(modalClass);
 		modalWindow.classList.add('open')
+	}
+
+	else if (target.closest('button.menu')) {
+		var submenuOpen = document.querySelector('.submenu.open');
+		if (submenuOpen) submenuOpen.classList.remove('open');
+
+		document.body.classList.toggle('menu')
+	}
+
+	else if (target.closest('button.submenu')) {
+		target.closest('button.submenu').nextElementSibling.classList.toggle('open')
+	}
+
+	else if (target.closest('button.back')) {
+		target.closest('.submenu').classList.remove('open')
 	}
 });
 

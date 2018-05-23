@@ -78,7 +78,8 @@ button.menu {
     background-color: transparent;
 }
 
-ul.menu {
+ul.menu,
+ul.submenu {
 	width: 100vw;
 	height: calc(100vh - 75px);
 	overflow-y: auto;
@@ -102,7 +103,8 @@ body.menu {
 	overflow: hidden;
 }
 
-body.menu ul.menu {
+body.menu ul.menu,
+.submenu.open {
 	transform: initial;
 }
 
@@ -149,7 +151,7 @@ ul.menu .language a:not([href]) {
 	color: #d81f8b;
 }
 
-ul.menu li:last-of-type {
+ul.menu > li:last-of-type {
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
