@@ -16,6 +16,13 @@ body {
 	font-size: 16px;
 	line-height: 1.5;
 	color: #333;
+	position: relative;
+}
+
+button {
+	font-family: inherit;
+	padding: 0;
+	border: 0;
 }
 
 .wrapper {
@@ -43,6 +50,7 @@ body {
 
 header {
 	height: 75px;
+	padding-left: 6.25vw;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -65,9 +73,89 @@ header a[href*='tel:'] {
 }
 
 button.menu {
-	padding: 0;
-	border: 0;
+	width: 75px;
+	height: 100%;
     background-color: transparent;
+}
+
+ul.menu {
+	width: 100vw;
+	height: calc(100vh - 75px);
+	overflow-y: auto;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: fixed;
+	top: 75px;
+	left: 0;
+	z-index: 2;
+	transform: translateX(100%);
+	font-size: 18px;
+	line-height: 48px;
+	background-color: #fff;
+	transition-duration: .35s;
+	transition-property: transform;
+	transition-timing-function: ease-in-out;
+}
+
+body.menu {
+	overflow: hidden;
+}
+
+body.menu ul.menu {
+	transform: initial;
+}
+
+ul.menu li {
+	border-top: 1px solid #ebebeb;
+	padding-right: 6.25vw;
+	padding-left: 6.25vw;
+}
+
+ul.menu a {
+	width: 100%;
+	color: inherit;
+	text-decoration: none;
+}
+
+ul.menu li:not(.language) a {
+	display: block;
+}
+
+ul.menu li:not(:last-of-type) button {
+	width: 100%;
+	background-color: transparent;
+	font-size: inherit;
+	line-height: 48px;
+	text-align: left;
+	position: relative;
+}
+
+ul.menu li:not(:last-of-type) button svg {
+	font-size: 10px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+}
+
+ul.menu .language a:first-of-type::after {
+	content: ' | ';
+	color: #ebebeb;
+	font-weight: 100;
+}
+
+ul.menu .language a:not([href]) {
+	color: #d81f8b;
+}
+
+ul.menu li:last-of-type {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+ul.menu li:last-of-type button {
+	line-height: inherit;
 }
 
 .icon-hamburger {
@@ -127,8 +215,6 @@ section.preview button {
 	height: 60px;
 	border-radius: 50%;
 	background-color: #8c1057;
-	border: 0;
-	padding: 0;
 }
 
 section.preview button:not(:last-of-type) {
@@ -380,12 +466,15 @@ legend {
 
 .btn {
 	width: 100%;
-	height: 58px;
 	color: #fff;
 	font-size: inherit;
 	border-radius: 3px;
 	background-color: rgb(233, 30, 145);
 	border: 0;
+}
+
+.choose .btn {
+	height: 58px;
 }
 
 .output a {
@@ -443,7 +532,8 @@ legend {
 	background-color: #fff;
 	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .2);
 	position: absolute;
-	font-size: 24px;
+	font-size: 13px;
+	color: #333;
 }
 
 .owl-prev {
@@ -453,6 +543,10 @@ legend {
 .owl-next {
 	right: 0;
 	transform: translate(50%, -50%);
+}
+
+.owl-prev svg {
+	transform: rotate(180deg);
 }
 
 address {

@@ -1,3 +1,9 @@
+document.querySelector('button.menu').onclick = function() {
+	document.body.classList.toggle('menu')
+}
+
+
+
 document.addEventListener('click', function(e) {
 	e = e || window.event;
 	const target = e.target;
@@ -23,7 +29,11 @@ $('.girls .owl-carousel').owlCarousel({
 	items: 1,
 	autoHeight: true,
 	dots: false,
-	nav: true
+	nav: true,
+	navText: [
+		'<svg class="icon-arrow"><use xlink:href="#icon-arrow"></use></svg>',
+		'<svg class="icon-arrow"><use xlink:href="#icon-arrow"></use></svg>'
+	]
 });
 
 $('.instagram .owl-carousel').owlCarousel({
