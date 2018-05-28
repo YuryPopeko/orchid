@@ -106,6 +106,17 @@ body.menu {
 	overflow: hidden;
 }
 
+main {
+	width: 100vw;
+	transition-duration: .35s;
+	transition-property: transform;
+	transition-timing-function: ease-in-out;
+}
+
+body.menu main {
+	transform: translateX(-100%);
+}
+
 body.menu ul.menu,
 .submenu.open {
 	transform: initial;
