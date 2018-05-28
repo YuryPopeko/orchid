@@ -30,21 +30,28 @@ document.addEventListener('click', function(e) {
 
 
 
+document.ontouchmove = function(e) {
+	e = e || window.event;
+
+	if (e.target.closest('.menu')) return;
+	e.preventDefault();
+}
+
+
+
 $('.modal-gallery .owl-carousel').owlCarousel({
 	items: 1,
 	autoHeight: true,
 	dots: false
 });
 
+var arrow = '<svg class="icon-arrow"><use xlink:href="#icon-arrow"></use></svg>';
 $('.girls .owl-carousel').owlCarousel({
 	items: 1,
 	autoHeight: true,
 	dots: false,
 	nav: true,
-	navText: [
-		'<svg class="icon-arrow"><use xlink:href="#icon-arrow"></use></svg>',
-		'<svg class="icon-arrow"><use xlink:href="#icon-arrow"></use></svg>'
-	]
+	navText: [arrow, arrow]
 });
 
 $('.instagram .owl-carousel').owlCarousel({

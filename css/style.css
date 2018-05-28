@@ -110,6 +110,9 @@ body.menu ul.menu,
 
 ul.menu li {
 	border-top: 1px solid #ebebeb;
+}
+
+ul.menu li > * {
 	padding-right: 6.25vw;
 	padding-left: 6.25vw;
 }
@@ -137,7 +140,7 @@ ul.menu li:not(:last-of-type) button svg {
 	font-size: 10px;
 	position: absolute;
 	top: 50%;
-	right: 0;
+	right: 6.25vw;
 	transform: translateY(-50%);
 }
 
@@ -152,8 +155,7 @@ ul.menu .language a:not([href]) {
 }
 
 ul.menu > li:last-of-type {
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding: 15px 6.25vw;
 }
 
 ul.menu li:last-of-type button {
