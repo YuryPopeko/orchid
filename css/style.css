@@ -49,6 +49,7 @@ button {
 }
 
 header {
+	width: 100vw;
 	height: 75px;
 	padding-left: 6.25vw;
 	display: flex;
@@ -84,7 +85,8 @@ ul.submenu {
 	height: calc(100vh - 75px);
 	overflow-y: auto;
 	margin: 0;
-	padding: 0;
+	padding-left: 0;
+	padding-bottom: 15px;
 	list-style: none;
 	position: fixed;
 	top: 75px;
@@ -100,6 +102,7 @@ ul.submenu {
 }
 
 body.menu {
+	position: fixed;
 	overflow: hidden;
 }
 
@@ -112,7 +115,9 @@ ul.menu li {
 	border-top: 1px solid #ebebeb;
 }
 
-ul.menu li > * {
+ul.menu li:not(.language) > *:first-child,
+ul.menu .language,
+ul.menu > li:last-of-type {
 	padding-right: 6.25vw;
 	padding-left: 6.25vw;
 }
@@ -155,7 +160,7 @@ ul.menu .language a:not([href]) {
 }
 
 ul.menu > li:last-of-type {
-	padding: 15px 6.25vw;
+	padding-top: 15px;
 }
 
 ul.menu li:last-of-type button {
@@ -466,6 +471,10 @@ legend {
 .choose fieldset input:checked + label {
 	background-color: rgb(213, 31, 138);
 	color: #fff;
+}
+
+[type='submit'] {
+	-webkit-appearance: button;
 }
 
 .btn {

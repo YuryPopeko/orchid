@@ -30,15 +30,6 @@ document.addEventListener('click', function(e) {
 
 
 
-document.ontouchmove = function(e) {
-	e = e || window.event;
-
-	if (e.target.closest('.menu')) return;
-	e.preventDefault();
-}
-
-
-
 $('.modal-gallery .owl-carousel').owlCarousel({
 	items: 1,
 	autoHeight: true,
