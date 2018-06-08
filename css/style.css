@@ -57,6 +57,7 @@ header {
 	align-items: center;
 	background-color: white;
 	box-shadow: 0 3px 15px -10px black;
+	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
 	z-index: 2;
