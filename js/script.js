@@ -5,17 +5,19 @@ document.addEventListener('click', function(e) {
 	e = e || window.event;
 	const target = e.target;
 
+	// закрытие модального окна
 	if (target.closest('button.close')) {
 		target.closest('button.close').parentElement.classList.remove('open');
 	}
 
+	// открытие модального окна
 	else if (target.closest('[class*=modal-]')) {
-		const modalClass = 'div.modal-' + target.closest('[class*=modal-]').className.slice(6);
-		const modalWindow = document.querySelector(modalClass);
+		const modalWindow = document.querySelector('div.' + target.classList[0]);
 		modalWindow.classList.add('open')
 	}
 
 	else if (target.closest('button.menu')) {
+
 		// открывая меню, устанвить top: прокручено пикселей
 		if (!document.body.classList.contains('menu')) {
 			scrolledTop = window.pageYOffset || document.documentElement.scrollTop;

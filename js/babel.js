@@ -6,34 +6,38 @@ document.addEventListener('click', function (e) {
 	e = e || window.event;
 	var target = e.target;
 
+	// закрытие модального окна
 	if (target.closest('button.close')) {
 		target.closest('button.close').parentElement.classList.remove('open');
-	} else if (target.closest('[class*=modal-]')) {
-		var modalClass = 'div.modal-' + target.closest('[class*=modal-]').className.slice(6);
-		var modalWindow = document.querySelector(modalClass);
-		modalWindow.classList.add('open');
-	} else if (target.closest('button.menu')) {
-		// открывая меню, устанвить top: прокручено пикселей
-		if (!document.body.classList.contains('menu')) {
-			scrolledTop = window.pageYOffset || document.documentElement.scrollTop;
-			document.body.style.top = '-' + scrolledTop + 'px';
-		} else {
-			// закрывая, прокрутить на это значение
-			document.body.style.top = '';
-			setTimeout(function () {
-				window.scrollTo(0, scrolledTop);
-			}, 0);
-		}
-
-		var submenuOpen = document.querySelector('.submenu.open');
-		if (submenuOpen) submenuOpen.classList.remove('open');
-
-		document.body.classList.toggle('menu');
-	} else if (target.closest('button.submenu')) {
-		target.closest('button.submenu').nextElementSibling.classList.toggle('open');
-	} else if (target.closest('button.back')) {
-		target.closest('.submenu').classList.remove('open');
 	}
+
+	// открытие модального окна
+	else if (target.closest('[class*=modal-]')) {
+			var modalWindow = document.querySelector('div.' + target.classList[0]);
+			modalWindow.classList.add('open');
+		} else if (target.closest('button.menu')) {
+
+			// открывая меню, устанвить top: прокручено пикселей
+			if (!document.body.classList.contains('menu')) {
+				scrolledTop = window.pageYOffset || document.documentElement.scrollTop;
+				document.body.style.top = '-' + scrolledTop + 'px';
+			} else {
+				// закрывая, прокрутить на это значение
+				document.body.style.top = '';
+				setTimeout(function () {
+					window.scrollTo(0, scrolledTop);
+				}, 0);
+			}
+
+			var submenuOpen = document.querySelector('.submenu.open');
+			if (submenuOpen) submenuOpen.classList.remove('open');
+
+			document.body.classList.toggle('menu');
+		} else if (target.closest('button.submenu')) {
+			target.closest('button.submenu').nextElementSibling.classList.toggle('open');
+		} else if (target.closest('button.back')) {
+			target.closest('.submenu').classList.remove('open');
+		}
 });
 
 $('.modal-gallery .owl-carousel').owlCarousel({
