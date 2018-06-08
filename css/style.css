@@ -149,21 +149,36 @@ ul.menu li:not(.language) a {
 	display: block;
 }
 
-ul.menu li:not(:last-of-type) button {
+ul.menu button.submenu,
+ul.menu button.back {
 	width: 100%;
 	background-color: transparent;
 	font-size: inherit;
 	line-height: 48px;
 	text-align: left;
+}
+
+ul.menu button.submenu {
+	color: inherit;
 	position: relative;
 }
 
-ul.menu li:not(:last-of-type) button svg {
+ul.menu button.submenu svg {
 	font-size: 10px;
 	position: absolute;
 	top: 50%;
 	right: 6.25vw;
 	transform: translateY(-50%);
+}
+
+ul.menu button.back {
+	color: rgb(234, 45, 152);
+}
+
+ul.menu button.back svg {
+	margin-right: 10px;
+	font-size: 10px;
+	transform: rotate(180deg);
 }
 
 ul.menu .language a:first-of-type::after {
@@ -262,7 +277,7 @@ div[class*='modal-'] {
 	background-color: #000;
 	position: fixed;
 	top: 0;
-	z-index: 1;
+	z-index: 2;
 	transform: scale(0);
 	transition-duration: .2s;
 	transition-timing-function: ease-in-out;

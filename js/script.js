@@ -65,16 +65,65 @@ $('.instagram .owl-carousel').owlCarousel({
 
 
 var map,
-	orchid = {lat: 59.9274324, lng: 30.3497684};
+	orchid = {lat: 59.9271230, lng: 30.3546023},
+	hotel = {lat: 59.9302777, lng: 30.3612273},
+	vladimirskaya = {lat: 59.9275064, lng: 30.3479397},
+	markerPedestrian = 'images/pedestrian.png';
+
+function drawPath(place) {
+	return {
+		path: place,
+		strokeOpacity: 0,
+		icons: [{
+					icon: {
+						path: 'M 0,-1 0,1',
+						strokeOpacity: .5,
+						scale: 4,
+						strokeColor: "rgb(234, 45, 152)",
+						strokeWeight: 5
+					},
+					offset: '0',
+					repeat: '20px'
+				}]
+		}
+}
+
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: orchid,
 		zoom: 17
 	});
 
-	var marker = new google.maps.Marker({
-    	position: orchid,
-		map: map,
-		icon: 'images/marker.png'
-    });
+	var markerOrchid = new google.maps.Marker({
+	    	position: orchid,
+			map: map,
+			icon: 'images/marker.png'
+	    }),
+    	markerHotel = new google.maps.Marker({
+	    	position: hotel,
+			map: map,
+			icon: markerPedestrian
+	    }),
+    	markerVladimirskaya = new google.maps.Marker({
+	    	position: vladimirskaya,
+			map: map,
+			icon: markerPedestrian
+	    }),
+    	pathHotel = [
+			new google.maps.LatLng(59.93027773297446, 30.36122739315033),
+			new google.maps.LatLng(59.93011517788171, 30.360821982362495),
+			new google.maps.LatLng(59.926568723395846, 30.3585840622834),
+			new google.maps.LatLng(59.927124722976174, 30.354602336883545)
+		],
+		pathVladimrskaya = [
+			new google.maps.LatLng(59.92750643322401, 30.34793972969055),
+			new google.maps.LatLng(59.92778709072788, 30.348287461388622),
+			new google.maps.LatLng(59.92712337891824, 30.354602336883545)
+		];
+
+	var lineHotel = new google.maps.Polyline(drawPath(pathHotel)),
+		lineVladimrskaya = new google.maps.Polyline(drawPath(pathVladimrskaya));
+
+	lineHotel.setMap(map);
+	lineVladimrskaya.setMap(map);
 }
