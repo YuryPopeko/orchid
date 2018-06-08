@@ -1,3 +1,6 @@
+let scrolledTop = 0;
+
+
 document.addEventListener('click', function(e) {
 	e = e || window.event;
 	const target = e.target;
@@ -13,6 +16,15 @@ document.addEventListener('click', function(e) {
 	}
 
 	else if (target.closest('button.menu')) {
+		// открывая меню, устанвить top: прокручено пикселей
+		if (!document.body.classList.contains('menu')) {
+			scrolledTop = window.pageYOffset || document.documentElement.scrollTop;
+			document.body.style.top = '-' + scrolledTop + 'px';
+		} else { // закрывая, прокрутить на это значение
+			document.body.style.top = '';
+			setTimeout( () => { window.scrollTo(0, scrolledTop) }, 0);
+		}
+
 		var submenuOpen = document.querySelector('.submenu.open');
 		if (submenuOpen) submenuOpen.classList.remove('open');
 
