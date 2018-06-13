@@ -1,36 +1,70 @@
 "use strict";
 
-function includeHTML() {
-	var z, i, elmnt, file, xhttp;
-	/*loop through a collection of all HTML elements:*/
-	z = document.getElementsByTagName("*");
-	for (i = 0; i < z.length; i++) {
-		elmnt = z[i];
-		/*search for elements with a certain atrribute:*/
-		file = elmnt.getAttribute("include-html");
-		if (file) {
-			/*make an HTTP request using the attribute value as the file name:*/
-			xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function () {
-				if (this.readyState == 4) {
-					if (this.status == 200) {
-						elmnt.innerHTML = this.responseText;
-					}
-					if (this.status == 404) {
-						elmnt.innerHTML = "Page not found.";
-					}
-					/*remove the attribute, and call this function once more:*/
-					elmnt.removeAttribute("include-html");
-					includeHTML();
+(function () {
+	function load(dst, url, callback) {
+		var xmlhttp;
+		if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		xmlhttp.onreadystatechange = function () {
+			if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+				if (xmlhttp.status == 200) {
+					dst.innerHTML = xmlhttp.responseText;
+					statusText = "success";
+				} else {
+					statusText = "error";
 				}
-			};
-			xhttp.open("GET", file, true);
-			xhttp.send();
-			return;
+				callback(xmlhttp.responseText, statusText, xmlhttp);
+			}
+		};
+
+		try {
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+		} catch (e) {
+			callback(true, 'error', false);
 		}
 	}
-}
-includeHTML();
+
+	window.includeHTML = function (src, destination, callback) {
+		load(destination, src, function (response, status, xhr) {
+			if (status == "error") {
+				var iframe = document.createElement('iframe');
+				iframe.onload = function () {
+					if (!response && document.location.protocol.indexOf('http') == -1) {
+						//всё, приехали...
+						if (navigator.userAgent.match(/Chrome/i) !== -1) //выводим подсказку.
+							msg = 'For Chrome: add parameter in shortcut link:' + "\n" + '"path_chrome_dir\chrome.exe" --allow-file-access-from-files';
+						alert(navigator.userAgent + "\nResponse: " + response + "\nURL: " + src + "\n-------\n" + msg);
+					}
+					destination.innerHTML = window[this.name].document.body.innerHTML;
+					iframe.parentNode.removeChild(iframe);
+					includeHTMLAuto(destination);
+					if (callback) callback();
+				};
+
+				iframe.style.display = 'none';
+				iframe.name = 'includer' + src + Math.random();
+				iframe.src = src;
+				document.body.appendChild(iframe);
+			} else {
+				includeHTMLAuto(destination);
+				if (callback) callback();
+			}
+		});
+	};
+
+	function includeHTMLAuto(node) {
+		var includes = node.querySelectorAll('include');
+		for (var i = 0; i < includes.length; i++) {
+			includeHTML(includes[i].getAttribute("src"), includes[i]);
+		}
+	}
+
+	var oa = window.onload;
+	window.onload = function () {
+		oa && oa();
+		includeHTMLAuto(document.body);
+	};
+})();
 
 var scrolledTop = 0;
 
