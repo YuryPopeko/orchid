@@ -46,12 +46,12 @@ button {
   	width: 1em;
 	height: 1em;
 	fill: currentColor;
+	color: inherit;
 }
 
 header {
 	width: 100vw;
 	height: 75px;
-	padding-left: 6.25vw;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -64,12 +64,15 @@ header {
 }
 
 header .logo {
-	width: 96px;
-	height: 50px;
+	width: calc(96px + 6.25vw);
+	height: 100%;
 	background-image: url(../images/logo.png);
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-position: right center;
+	background-size: 96px auto;
 	font-size: 0;
+	padding-left: 6.25vw;
+	margin-right: 10px;
 }
 
 header a[href*='tel:'] {
@@ -94,6 +97,8 @@ ul.submenu {
 	padding-left: 0;
 	padding-bottom: 15px;
 	list-style: none;
+	position: fixed;
+	top: 75px;
 	left: 100%;
 	z-index: 2;
 	font-size: 18px;
@@ -102,16 +107,6 @@ ul.submenu {
 	transition-duration: .35s;
 	transition-property: left;
 	transition-timing-function: ease-in-out;
-}
-
-ul.menu {
-	position: fixed;
-	top: 75px;
-}
-
-ul.submenu {
-	position: absolute;
-	top: 0;
 }
 
 body.menu {
@@ -276,11 +271,17 @@ section.preview p {
 	margin-bottom: 30px;
 }
 
-section.preview button {
+.preview button {
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
-	background-color: #8c1057;
+	background-color: rgb(140, 16, 87);
+	color: white;
+}
+
+button.white {
+	background-color: white;
+	color: rgb(140, 16, 87);
 }
 
 section.preview button:not(:last-of-type) {
@@ -292,7 +293,6 @@ section.preview button:active {
 }
 
 section.preview svg {
-  color: #fff;
   font-size: 33px;
 }
 
@@ -354,6 +354,7 @@ div[class*='modal-'] .owl-carousel {
 	text-align: center;
 	font-size: 14px;
 	line-height: 1;
+	white-space: nowrap;
 	padding: 20px 15px;
 	position: relative;
 }
@@ -370,10 +371,10 @@ div[class*='modal-'] .owl-carousel {
 .resume-tabs .content {
 	padding-top: 20px;
 	padding-bottom: 20px;
-	background-color: #ededed;
+	background-color: rgb(237, 237, 237);
 }
 
-.resume-tabs .content p {
+.resume-tabs .content > * {
 	display: none;
 }
 
@@ -381,23 +382,39 @@ div[class*='modal-'] .owl-carousel {
 	color: #368fbe;
 }
 
-#masseuses:checked ~ .content .masseuses,
-#bar:checked ~ .content .bar,
-#interior:checked ~ .content .interior {
+#tab-1:checked ~ .content .tab-1,
+#tab-2:checked ~ .content .tab-2,
+#tab-3:checked ~ .content .tab-3 {
 	display: block;
 }
 
-#masseuses:checked ~ .buttons label[for='masseuses']::after,
-#bar:checked ~ .buttons label[for='bar']::after,
-#interior:checked ~ .buttons label[for='interior']::after {
+#tab-1:checked ~ .buttons label[for='tab-1']::after,
+#tab-2:checked ~ .buttons label[for='tab-2']::after,
+#tab-3:checked ~ .buttons label[for='tab-3']::after {
 	content: '';
 	width: 7px;
 	height: 7px;
-	background-color: #ededed;
+	background-color: rgb(237, 237, 237);
 	position: absolute;
 	left: 50%;
 	bottom: 0;
 	transform: translate(-50%, 50%) rotate(45deg);
+}
+
+.resume-tabs ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.resume-tabs ul li::before {
+	content: '';
+	display: inline-block;
+	width: 5px;
+	height: 5px;
+	clip-path: circle();
+	background-color: rgb(181, 26, 125);
+	margin-right: 10px;
+	vertical-align: middle;
 }
 
 h2 {
@@ -593,8 +610,23 @@ legend {
 	font-weight: 100;
 }
 
+.interiors {
+	padding-bottom: 25px;
+}
+
+.interiors .owl-item {
+	height: 190px;
+	overflow: hidden;
+}
+
+.interiors .owl-carousel img {
+	width: auto;
+	height: 100%;
+	transform: translateX(-25%);
+}
+
 .girls {
-	background-color: #ededed;
+	background-color: rgb(237, 237, 237);
 	padding-bottom: 20px;
 }
 
@@ -644,6 +676,16 @@ legend {
 	transform: rotate(180deg);
 }
 
+.instagram .owl-item {
+	height: 140px;
+}
+
+.instagram .owl-item img {
+	min-width: 100%;
+	width: auto;
+	height: 100%;
+}
+
 address {
 	font-style: normal;
 }
@@ -682,7 +724,7 @@ address {
 
 .payment {
 	text-align: center;
-	border-bottom: 1px solid #ededed;
+	border-bottom: 1px solid rgb(237, 237, 237);
 }
 
 .payment p {
