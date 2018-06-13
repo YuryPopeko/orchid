@@ -13,7 +13,7 @@ document.addEventListener('click', function (e) {
 
 	// открытие модального окна
 	else if (target.closest('[class*=modal-]')) {
-			var modalWindow = document.querySelector('div.' + target.classList[0]);
+			var modalWindow = document.querySelector('div.' + target.closest('[class*=modal-]').classList[0]);
 			modalWindow.classList.add('open');
 		} else if (target.closest('button.menu')) {
 
@@ -38,26 +38,6 @@ document.addEventListener('click', function (e) {
 		} else if (target.closest('button.back')) {
 			target.closest('.submenu').classList.remove('open');
 		}
-});
-
-$('.modal-gallery .owl-carousel').owlCarousel({
-	items: 1,
-	autoHeight: true,
-	dots: false
-});
-
-var arrow = '<svg class="icon-arrow"><use xlink:href="#icon-arrow"></use></svg>';
-$('.girls .owl-carousel').owlCarousel({
-	items: 1,
-	autoHeight: true,
-	dots: false,
-	nav: true,
-	navText: [arrow, arrow]
-});
-
-$('.instagram .owl-carousel').owlCarousel({
-	items: 2,
-	dots: false
 });
 
 var map,

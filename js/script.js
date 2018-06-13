@@ -12,7 +12,7 @@ document.addEventListener('click', function(e) {
 
 	// открытие модального окна
 	else if (target.closest('[class*=modal-]')) {
-		const modalWindow = document.querySelector('div.' + target.classList[0]);
+		const modalWindow = document.querySelector('div.' + target.closest('[class*=modal-]').classList[0]);
 		modalWindow.classList.add('open')
 	}
 
@@ -40,28 +40,6 @@ document.addEventListener('click', function(e) {
 	else if (target.closest('button.back')) {
 		target.closest('.submenu').classList.remove('open')
 	}
-});
-
-
-
-$('.modal-gallery .owl-carousel').owlCarousel({
-	items: 1,
-	autoHeight: true,
-	dots: false
-});
-
-var arrow = '<svg class="icon-arrow"><use xlink:href="#icon-arrow"></use></svg>';
-$('.girls .owl-carousel').owlCarousel({
-	items: 1,
-	autoHeight: true,
-	dots: false,
-	nav: true,
-	navText: [arrow, arrow]
-});
-
-$('.instagram .owl-carousel').owlCarousel({
-	items: 2,
-	dots: false
 });
 
 
@@ -129,3 +107,32 @@ function initMap() {
 	lineHotel.setMap(map);
 	lineVladimrskaya.setMap(map);
 }
+
+function includeHTML() {
+	var z, i, elmnt, file, xhttp;
+	/*loop through a collection of all HTML elements:*/
+	z = document.getElementsByTagName("*");
+	for (i = 0; i < z.length; i++) {
+		elmnt = z[i];
+		/*search for elements with a certain atrribute:*/
+		file = elmnt.getAttribute("include-html");
+		if (file) {
+			/*make an HTTP request using the attribute value as the file name:*/
+			xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4) {
+					if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+					if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+					/*remove the attribute, and call this function once more:*/
+					elmnt.removeAttribute("include-html");
+					includeHTML();
+				}
+			} 
+			xhttp.open("GET", file, true);
+			xhttp.send();
+			return;
+		}
+	}
+}
+
+includeHTML()
