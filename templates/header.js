@@ -11,7 +11,7 @@ document.write('\
 					<li><button type="button" class="back"><svg class="icon-arrow"><use xlink:href="#icon-arrow"></use></svg>Вернуться назад</button></li>\
 					<li><a href="about.html">О салоне</a></li>\
 					<li><a href="">Вакансии</a></li>\
-					<li><a href="">Отзывы</a></li>\
+					<li><a href="reviews.html">Отзывы</a></li>\
 					<li><a href="">Меню бара</a></li>\
 				</ul>\
 			</li>\

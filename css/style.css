@@ -25,6 +25,10 @@ button {
 	border: 0;
 }
 
+p {
+	margin-top: 0;
+}
+
 .wrapper {
 	width: 87.5%;
 	margin-right: auto;
@@ -78,7 +82,7 @@ header .logo {
 header a[href*='tel:'] {
 	font-size: 15px;
 	line-height: 1;
-	color: #e91e91;
+	color: rgb(233, 30, 145);
 	text-decoration: none;
 }
 
@@ -103,13 +107,14 @@ ul.submenu {
 	z-index: 2;
 	font-size: 18px;
 	line-height: 48px;
-	background-color: #fff;
+	background-color: white;
 	transition-duration: .35s;
 	transition-property: left;
 	transition-timing-function: ease-in-out;
 }
 
-body.menu {
+body.menu,
+body.modal {
 	position: fixed;
 	overflow: hidden;
 }
@@ -209,7 +214,7 @@ ul.menu li:last-of-type button {
 section.preview {
 	padding-top: 100px;
 	padding-bottom: 30px;
-	color: #fff;
+	color: white;
 	text-align: center;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -249,7 +254,7 @@ h2 {
     font-family: Georgia;
 }
 
-body:not(.index) h1 {
+body:not(.index) .preview h1 {
 	font-size: 24px;
 }
 
@@ -259,6 +264,73 @@ body:not(.index) h1 {
 
 .about h1 {
 	margin-bottom: 110px;
+}
+
+.reviews {
+	background-color: rgb(245, 245, 245);
+	padding-bottom: 35px;
+}
+
+.reviews .item:not(:last-of-type) {
+	margin-bottom: 30px;
+}
+
+.reviews .item b {
+	font-size: 20px;
+	font-weight: 500;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.reviews .item p {
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.reviews .item span {
+	font-size: 18px;
+	color: rgb(233, 30, 145);
+}
+
+.feedback {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: rgb(237, 237, 237);
+}
+
+.feedback button,
+div.modal-feedback .btn {
+	background-color: rgb(111, 27, 112);
+}
+
+div.modal-feedback {
+	padding-top: calc( (100vh - 377px) / 2);
+}
+
+div.modal-feedback label {
+	color: rgb(93, 93, 93);
+	display: block;
+	margin-bottom: 15px;
+}
+
+div.modal-feedback input:not([type='submit']),
+div.modal-feedback textarea {
+	width: 100%;
+	background-color: rgb(237, 237, 237);
+	border-width: 0;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+div.modal-feedback input:not([type='submit']) {
+	line-height: 40px;
+}
+
+div.modal-feedback textarea {
+	height: 110px;
+	resize: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 h1 + p,
@@ -299,7 +371,7 @@ section.preview svg {
 div[class*='modal-'] {
 	width: 100%;
 	height: 100%;
-	background-color: #000;
+	background-color: rgb(245, 245, 245);
 	position: fixed;
 	top: 0;
 	z-index: 2;
@@ -317,13 +389,23 @@ div[class*='modal-'] .close {
 	height: 25px;
 	border: 0;
 	padding: 0;
-	background-color: #000;
+	background-color: transparent;
 	position: absolute;
-	top: 50px;
+	top: 20px;
 	right: 20px;
 	z-index: 2;
 	font-size: 15px;
 	color: #b3b3b3;
+}
+
+div.modal-tour .close {
+	background-color: black;
+	top: 50px;
+}
+
+
+div.modal-gallery {
+	background-color: black;
 }
 
 iframe {
@@ -344,7 +426,7 @@ div[class*='modal-'] .owl-carousel {
 .resume-tabs .buttons {
 	background-color: rgb(181, 26, 125);
 	background-image: linear-gradient(90deg, rgb(181, 26, 125) 0%, rgb(228, 58, 157) 100%);
-	color: #fff;
+	color: white;
 }
 
 .resume-tabs label {
@@ -417,13 +499,15 @@ div[class*='modal-'] .owl-carousel {
 	vertical-align: middle;
 }
 
+:not(.preview) h1,
 h2 {
 	font-family: Georgia;
 	font-size: 28px;
 	line-height: 1;
+	margin-bottom: 20px;
 }
 
-section:nth-of-type(n+2) {
+section:not(.preview) {
 	padding-top: 30px;
 }
 
@@ -459,7 +543,7 @@ section:nth-of-type(n+2) {
 	font-size: 14px;
 	text-transform: uppercase;
 	font-weight: 500;
-	color: #fff;
+	color: white;
 	display: block;
 	position: relative;
 	z-index: 1;
@@ -549,7 +633,7 @@ legend {
 
 .choose fieldset input:checked + label {
 	background-color: rgb(213, 31, 138);
-	color: #fff;
+	color: white;
 }
 
 [type='submit'] {
@@ -557,16 +641,18 @@ legend {
 }
 
 .btn {
+	display: block;
 	width: 100%;
-	color: #fff;
+	max-width: 87.5vw;
+	line-height: 58px;
+	color: white;
 	font-size: inherit;
 	border-radius: 3px;
-	background-color: rgb(233, 30, 145);
 	border: 0;
 }
 
 .choose .btn {
-	height: 58px;
+	background-color: rgb(233, 30, 145);
 }
 
 .output a {
@@ -637,7 +723,7 @@ legend {
 .girls img + span {
 	font-size: 24px;
 	line-height: 1;
-	color: #fff;
+	color: white;
 	font-weight: 100;
 	position: absolute;
 	bottom: 20px;
@@ -656,7 +742,7 @@ legend {
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
-	background-color: #fff;
+	background-color: white;
 	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .2);
 	position: absolute;
 	font-size: 13px;
@@ -681,9 +767,8 @@ legend {
 }
 
 .instagram .owl-item img {
-	min-width: 100%;
-	width: auto;
 	height: 100%;
+	object-fit: cover;
 }
 
 address {
@@ -703,7 +788,7 @@ address {
 }
 
 .contact a {
-	color: #fff;
+	color: white;
 	display: inline-block;
 }
 

@@ -10,12 +10,22 @@ document.addEventListener('click', function (e) {
 
 	// закрытие модального окна
 	if (target.closest('button.close')) {
+		document.body.style.top = '';
+		setTimeout(function () {
+			window.scrollTo(0, scrolledTop);
+		}, 0);
+
 		target.closest('button.close').parentElement.classList.remove('open');
+		document.body.classList.remove('modal');
 	}
 
 	// открытие модального окна
 	else if (target.closest('[class*=modal-]')) {
+			scrolledTop = window.pageYOffset || document.documentElement.scrollTop;
+			document.body.style.top = '-' + scrolledTop + 'px';
+
 			var modalWindow = document.querySelector('div.' + target.closest('[class*=modal-]').classList[0]);
+			document.body.classList.add('modal');
 			modalWindow.classList.add('open');
 		} else if (target.closest('button.menu')) {
 

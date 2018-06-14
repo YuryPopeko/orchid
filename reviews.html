@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Отзывы | Орхидея</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<script src="templates/svg-sprite.js"></script>
+	<script src="templates/header.js"></script>
+	<main>
+		<ul class="breadcrumb">
+			<li><a href="index.html">Главная</a></li>
+			<li><a>Отзывы</a></li>
+		</ul>
+		<section class="reviews">
+			<h1 class="wrapper">Отзывы</h1>
+			<div class="item wrapper">
+				<b>Vladimirovic</b>
+				<p>I was massaged by the wonderful Alina tonight. She is a stunning beauty with a perfect tight body and the most gentle hands imaginable. She has taken very well care of me and my most intimate parts, including a gentle massage of the prostate. I had the feeling she brought me in heaven and back. Thanks Alina!</p>
+				<span>Ноябрь 30, 2016, 23:43</span>
+			</div>
+			<div class="item wrapper">
+				<b>Алексей</b>
+				<p>19 июня побывал на массаже у девушки Маши. Мне очень понравился массаж в ее исполнении. Маше удалось создать неповторимую, незабываемую атмосферу. Девушка не только безумно красивая, но и очень интересная в общении. Мне было не только приятно созерцать ее, но и общаться, а ее очаровательная улыбка у меня до сих пор перед глазами. У меня создалось ощущение, что я с ней знаком много лет. Обязательно загляну к вам в салон в салон в ближайшее время. Спасибо большое, за непередаваемые эмоции.</p>
+				<span>Июнь 19, 2016, 04:00</span>
+			</div>
+			<div class="item wrapper">
+				<b>Алексей</b>
+				<p>26 декабря был на мыльном массаже в 4 руки. Спасибо массажисткам за те незабываемые ощущения, которые получил от массажа:)!!!</p>
+				<span>Сентябрь 15, 2015, 01:30</span>
+			</div>
+			<div class="item wrapper">
+				<b>Вячеслав</b>
+				<p>Иногда посещаю ваш салон, однако отзыв захотелось оставить впервые - побывал на массаже у девочки Жанны, сумела создать изумительную атмосферу-лёгкая в общении, массаж делала хорошо и старательно,несмотря на хрупкие ручки.В эротической части всё было нежно, ласково, чувственно...просто улёт. не могу не отметить, что эстетически я тоже удовольствие получил, девочка красивая, с прекрасной фигурой, в общем, первый раз мне так понравилось на массаже. Большое спасибо!</p>
+				<span>Сентябрь 02, 2015, 18:45</span>
+			</div>
+			<div class="item wrapper">
+				<b>Андрей</b>
+				<p>Провел в салоне целую ночь Алена бесподобна просто богиня. Советую все очаровательно!!!!</p>
+				<span>Август 28, 2015, 15:00</span>
+			</div>
+		</section>
+		<div class="feedback">
+			<button type="button" class="modal-feedback btn wrapper">Оставить отзыв</button>
+		</div>
+		<script src="templates/instagram.js"></script>
+		<script src="templates/info.js"></script>
+	</main>
+	<script src="templates/footer.js"></script>
+	<script src="templates/modal-tour.js"></script>
+	<div class="modal-feedback">
+		<button type="button" class="close"><svg class="icon-close"><use xlink:href="#icon-close"></use></svg></button>
+		<h2 class="wrapper">Оставить отзыв</h2>
+		<form method="post" class="wrapper">
+			<label>Имя<input type="text" name="name"></label>
+			<label>E-mail<input type="email" name="email"></label>
+			<label>Сообщение<textarea></textarea></label>
+			<input type="submit" value="Оставить отзыв" class="btn">
+		</form>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoY77NK4l5PPF3rKREUDuhDFVBtFb7VYA&callback=initMap"
+    async defer></script>
+	<script defer src="js/babel.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function(event) {
+			$('.interiors .owl-carousel').owlCarousel({
+				items: 2,
+				margin: 20,
+				autoHeight: true,
+				dots: false,
+				nav: true,
+				navText: arrows
+			});
+		});
+	</script>
+</body>
+</html>
