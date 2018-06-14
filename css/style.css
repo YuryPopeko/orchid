@@ -204,6 +204,7 @@ ul.menu > li:last-of-type {
 
 ul.menu li:last-of-type button {
 	line-height: inherit;
+	background-color: rgb(233, 30, 145);
 }
 
 .icon-hamburger {
@@ -760,6 +761,10 @@ legend {
 
 .owl-prev svg {
 	transform: rotate(180deg);
+}
+
+.owl-nav .disabled svg {
+	opacity: .5;
 }
 
 .instagram .owl-item {

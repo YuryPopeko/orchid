@@ -5,15 +5,14 @@ var arrow = '<svg class="icon-arrow"><use xlink:href="#icon-arrow"></use></svg>'
 var arrows = [arrow, arrow];
 
 document.addEventListener('click', function (e) {
+
 	e = e || window.event;
 	var target = e.target;
 
 	// закрытие модального окна
 	if (target.closest('button.close')) {
-		document.body.style.top = '';
-		setTimeout(function () {
-			window.scrollTo(0, scrolledTop);
-		}, 0);
+
+		scrollAfterClose();
 
 		target.closest('button.close').parentElement.classList.remove('open');
 		document.body.classList.remove('modal');
@@ -21,36 +20,43 @@ document.addEventListener('click', function (e) {
 
 	// открытие модального окна
 	else if (target.closest('[class*=modal-]')) {
-			scrolledTop = window.pageYOffset || document.documentElement.scrollTop;
-			document.body.style.top = '-' + scrolledTop + 'px';
+
+			scrollAfterOpen();
 
 			var modalWindow = document.querySelector('div.' + target.closest('[class*=modal-]').classList[0]);
 			document.body.classList.add('modal');
 			modalWindow.classList.add('open');
 		} else if (target.closest('button.menu')) {
 
-			// открывая меню, устанвить top: прокручено пикселей
-			if (!document.body.classList.contains('menu')) {
-				scrolledTop = window.pageYOffset || document.documentElement.scrollTop;
-				document.body.style.top = '-' + scrolledTop + 'px';
-			} else {
-				// закрывая, прокрутить на это значение
-				document.body.style.top = '';
-				setTimeout(function () {
-					window.scrollTo(0, scrolledTop);
-				}, 0);
-			}
+			if (!document.body.classList.contains('menu')) scrollAfterOpen();else scrollAfterClose();
 
 			var submenuOpen = document.querySelector('.submenu.open');
 			if (submenuOpen) submenuOpen.classList.remove('open');
 
 			document.body.classList.toggle('menu');
 		} else if (target.closest('button.submenu')) {
+
 			target.closest('button.submenu').nextElementSibling.classList.toggle('open');
 		} else if (target.closest('button.back')) {
+
 			target.closest('.submenu').classList.remove('open');
 		}
 });
+
+// открывая меню, устанвить top: прокручено пикселей
+function scrollAfterOpen() {
+
+	scrolledTop = window.pageYOffset || document.documentElement.scrollTop;
+	document.body.style.top = '-' + scrolledTop + 'px';
+}
+// закрывая, прокрутить на это значение
+function scrollAfterClose() {
+
+	document.body.style.top = '';
+	setTimeout(function () {
+		window.scrollTo(0, scrolledTop);
+	}, 0);
+}
 
 var map,
     orchid = { lat: 59.9271230, lng: 30.3546023 },
@@ -59,6 +65,7 @@ var map,
     markerPedestrian = 'images/pedestrian.png';
 
 function drawPath(place) {
+
 	return {
 		path: place,
 		strokeOpacity: 0,
@@ -77,9 +84,12 @@ function drawPath(place) {
 }
 
 function initMap() {
+
 	map = new google.maps.Map(document.getElementById('map'), {
+
 		center: orchid,
 		zoom: 17
+
 	});
 
 	var markerOrchid = new google.maps.Marker({
