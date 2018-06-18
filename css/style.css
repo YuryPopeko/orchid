@@ -227,11 +227,17 @@ section.preview {
 	background-image: url(../images/preview-index.jpg);
 }
 
+.bar-menu section.preview {
+	background-image: url(../images/preview-bar-menu.jpg);
+	padding-top: 120px;
+	padding-bottom: 130px;
+}
+
 .about section.preview {
 	background-image: url(../images/preview-about.jpg);
 }
 
-section.preview::after {
+body:not(.bar-menu) section.preview::after {
 	content: '';
 	width: 100%;
 	height: 100%;
@@ -255,16 +261,20 @@ h2 {
     font-family: Georgia;
 }
 
-body:not(.index) .preview h1 {
-	font-size: 24px;
-}
-
 .index h1 {
 	font-size: 32px;
 }
 
 .about h1 {
+	font-size: 24px;
 	margin-bottom: 110px;
+}
+
+.bar-menu h1 {
+	font-size: 38px;
+	line-height: 1;
+	text-transform: uppercase;
+	margin-bottom: 0;
 }
 
 .reviews {
@@ -305,7 +315,7 @@ div.modal-feedback .btn {
 }
 
 div.modal-feedback {
-	padding-top: calc( (100vh - 377px) / 2);
+	padding-top: 65px;
 	padding-bottom: 15px;
 }
 
@@ -496,15 +506,14 @@ div[class*='modal-'] .owl-carousel {
 	display: inline-block;
 	width: 5px;
 	height: 5px;
-	clip-path: circle();
+	clip-path: circle(50%);
 	background-color: rgb(181, 26, 125);
 	margin-right: 10px;
 	vertical-align: middle;
 }
 
-:not(.preview) h1,
+section:not(.preview) h1,
 h2 {
-	font-family: Georgia;
 	font-size: 28px;
 	line-height: 1;
 	margin-bottom: 20px;
@@ -864,4 +873,13 @@ ul.breadcrumb li + li::before {
 ul.breadcrumb li a {
     text-decoration: none;
     color: inherit;
+}
+
+.bar-menu img {
+	width: 100%;
+	float: left;
+}
+
+.bar-menu img:not(:last-of-type) {
+	margin-bottom: 15px;
 }

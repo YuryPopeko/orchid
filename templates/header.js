@@ -12,7 +12,7 @@ document.write('\
 					<li><a href="about.html">О салоне</a></li>\
 					<li><a href="">Вакансии</a></li>\
 					<li><a href="reviews.html">Отзывы</a></li>\
-					<li><a href="">Меню бара</a></li>\
+					<li><a href="bar-menu.html">Меню бара</a></li>\
 				</ul>\
 			</li>\
 			<li>\
