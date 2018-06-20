@@ -7,9 +7,9 @@ document.write('\
 			<a href="tel:88127645449">8 (812) 764-54-49</a><br>\
 			<a href="orchid-policy.pdf">Пользовательское соглашение</a>\
 			<div class="social">\
-				<a href=""><svg class="icon-vk"><use xlink:href="#icon-vk"></use></svg></a>\
-				<a href=""><svg class="icon-fb"><use xlink:href="#icon-fb"></use></svg></a>\
-				<a href=""><svg class="icon-inst"><use xlink:href="#icon-inst"></use></svg></a>\
+				<a href=""><svg class="icon"><use xlink:href="#icon-vk"></use></svg></a>\
+				<a href=""><svg class="icon"><use xlink:href="#icon-fb"></use></svg></a>\
+				<a href=""><svg class="icon"><use xlink:href="#icon-inst"></use></svg></a>\
 			</div>\
 		</div>\
 		<div class="payment">\

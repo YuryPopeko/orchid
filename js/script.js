@@ -1,5 +1,5 @@
 let scrolledTop = 0;
-const arrow = '<svg class="icon-arrow"><use xlink:href="#icon-arrow"></use></svg>';
+const arrow = '<svg class="icon"><use xlink:href="#icon-arrow"></use></svg>';
 const arrows = [arrow, arrow];
 
 

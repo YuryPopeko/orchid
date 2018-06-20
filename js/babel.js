@@ -1,7 +1,7 @@
 'use strict';
 
 var scrolledTop = 0;
-var arrow = '<svg class="icon-arrow"><use xlink:href="#icon-arrow"></use></svg>';
+var arrow = '<svg class="icon"><use xlink:href="#icon-arrow"></use></svg>';
 var arrows = [arrow, arrow];
 
 document.addEventListener('click', function (e) {
