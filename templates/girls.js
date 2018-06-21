@@ -19,7 +19,7 @@ document.write('\
 	</section>\
 	<script>\
 		document.addEventListener("DOMContentLoaded", function(event) {\
-			$(".girls .owl-carousel").owlCarousel({\
+			$("section.girls .owl-carousel").owlCarousel({\
 				items: 1,\
 				autoHeight: true,\
 				dots: false,\

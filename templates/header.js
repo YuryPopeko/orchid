@@ -19,22 +19,22 @@ document.write('\
 				<button type="button" class="submenu">Массаж<svg class="icon"><use xlink:href="#icon-arrow"></use></svg></button>\
 				<ul class="submenu">\
 					<li><button type="button" class="back"><svg class="icon"><use xlink:href="#icon-arrow"></use></svg>Вернуться назад</button></li>\
-					<li><a href="">Массаж для мужчин</a></li>\
-					<li><a href="">Массаж для дам</a></li>\
-					<li><a href="">Эротический массаж</a></li>\
-					<li><a href="">Массаж Нирвана</a></li>\
+					<li><a href="dolce-vita.html">Массаж для мужчин</a></li>\
+					<li><a href="dolce-vita.html">Массаж для дам</a></li>\
+					<li><a href="dolce-vita.html">Эротический массаж</a></li>\
+					<li><a href="dolce-vita.html">Массаж Нирвана</a></li>\
 					<li><a href="dolce-vita.html">Спа-комплекс «Дольче Вита»</a></li>\
-					<li><a href="">Мыльный массаж</a></li>\
-					<li><a href="">Премиум</a></li>\
+					<li><a href="dolce-vita.html">Мыльный массаж</a></li>\
+					<li><a href="dolce-vita.html">Премиум</a></li>\
 					<li class="all"><a href="massages.html" class="btn">Смотреть все массажи</a></li>\
 				</ul>\
 			</li>\
 			<li><a href="lease.html">Аренда саун</a></li>\
-			<li><a href="">Акции</a></li>\
-			<li><a href="">Галерея</a></li>\
-			<li><a href="">Наши девушки</a></li>\
-			<li><a href="">Сертификаты</a></li>\
-			<li><a href="">Контакты</a></li>\
+			<li><a href="actions.html">Акции</a></li>\
+			<li><a href="gallery.html">Галерея</a></li>\
+			<li><a href="girls.html">Наши девушки</a></li>\
+			<li><a href="certificate.html">Сертификаты</a></li>\
+			<li><a href="contacts.html">Контакты</a></li>\
 			<li class="all"><a class="btn">Смотреть прайс-лист услуг</a></li>\
 		</ul>\
 	</header>\

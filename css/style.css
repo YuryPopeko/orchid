@@ -29,14 +29,20 @@ p {
 	margin-top: 0;
 }
 
+hr {
+	margin-top: 0;
+	margin-bottom: 0;
+	height: 1px;
+	border: 0;
+	background-color: rgb(237, 237, 237)
+}
+
+[hidden]{display: none}
+
 .wrapper {
 	width: 87.5%;
 	margin-right: auto;
 	margin-left: auto;
-}
-
-[hidden] {
-	display: none;
 }
 
 .clearfix::after {
@@ -58,7 +64,7 @@ p {
 
 .icon {
 	display: inline-block;
-  	width: 1em;
+	width: 1em;
 	height: 1em;
 	fill: currentColor;
 	color: inherit;
@@ -218,19 +224,19 @@ ul.menu li .btn {
 	background-color: rgb(233, 30, 145);
 }
 
-.icon-hamburger {
+button.menu svg {
   color: #918f8f;
   font-size: 15px;
 }
 
 section.preview {
+	height: 405px;
 	padding-top: 100px;
-	padding-bottom: 30px;
 	color: white;
 	text-align: center;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: auto 100%;
+	background-size: cover;
 	position: relative;
 }
 
@@ -241,13 +247,12 @@ section.preview {
 .preview.dolce-vita {
 	background-image: url(../images/dolce-vita.jpg);
 	padding-top: 145px;
-	padding-bottom: 180px;
 }
 
 .bar-menu section.preview {
+	height: 288px;
 	background-image: url(../images/preview-bar-menu.jpg);
 	padding-top: 120px;
-	padding-bottom: 130px;
 }
 
 .about section.preview {
@@ -256,6 +261,20 @@ section.preview {
 
 .lease section.preview {
 	background-image: url(../images/preview-lease.jpg);
+}
+
+.actions section.preview {
+	background-image: url(../images/preview-actions.jpg);
+	padding-top: 180px;
+}
+
+.girls section.preview {
+	background-image: url(../images/preview-girls.jpg);
+}
+
+.certificate section.preview {
+	background-image: url(../images/preview-certificate.jpg);
+	padding-top: 140px;
 }
 
 body:not(.bar-menu) section.preview::after {
@@ -333,24 +352,24 @@ h1.single {
 	background-color: rgb(237, 237, 237);
 }
 
-.feedback button,
-div.modal-feedback .btn {
+.btn.violet {
 	background-color: rgb(111, 27, 112);
 }
 
-div.modal-feedback {
+div.modal-feedback,
+div.modal-callback {
 	padding-top: 65px;
 	padding-bottom: 15px;
 }
 
-div.modal-feedback label {
+div[class*='modal-'] label {
 	color: rgb(93, 93, 93);
 	display: block;
 	margin-bottom: 15px;
 }
 
-div.modal-feedback input:not([type='submit']),
-div.modal-feedback textarea {
+div[class*='modal-'] input:not([type='submit']),
+div[class*='modal-'] textarea {
 	width: 100%;
 	background-color: rgb(237, 237, 237);
 	border-width: 0;
@@ -358,11 +377,11 @@ div.modal-feedback textarea {
 	padding-left: 10px;
 }
 
-div.modal-feedback input:not([type='submit']) {
+div[class*='modal-'] input:not([type='submit']) {
 	line-height: 40px;
 }
 
-div.modal-feedback textarea {
+div[class*='modal-'] textarea {
 	height: 110px;
 	resize: none;
 	padding-top: 10px;
@@ -503,7 +522,11 @@ div[class*='modal-'] .owl-carousel {
 }
 
 [class*='resume'] .content a {
-	color: #368fbe;
+	color: rgb(54, 143, 190);
+}
+
+[class*='resume'] .content a:visited {
+	color: rgb(169, 23, 106);
 }
 
 #tab-1:checked ~ .content .tab-1,
@@ -553,7 +576,7 @@ section:not(.preview) {
 	padding-top: 30px;
 }
 
-.services a {
+a.fade {
 	text-decoration: none;
 	display: block;
 	height: 78.125vw;
@@ -572,7 +595,7 @@ section:not(.preview) {
 	left: 0;
 }
 
-.services a img {
+a.fade img {
 	min-width: 100%;
 	height: 100%;
 	position: absolute;
@@ -581,14 +604,17 @@ section:not(.preview) {
 	transform: translate(-50%, -50%);
 }
 
-.services a span {
-	font-size: 14px;
-	text-transform: uppercase;
-	font-weight: 500;
+a.fade span {
 	color: white;
 	display: block;
 	position: relative;
 	z-index: 1;
+}
+
+.services a span {
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
 }
 
 .choose {
@@ -694,6 +720,7 @@ legend {
 	font-size: inherit;
 	border-radius: 3px;
 	border: 0;
+	background-color: rgb(233, 30, 145);
 }
 
 a.btn {
@@ -701,8 +728,12 @@ a.btn {
 	text-align: center;
 }
 
-.choose .btn {
-	background-color: rgb(233, 30, 145);
+a.btn:visited {
+	background-color: rgb(212, 27, 132);
+}
+
+a.btn:active {
+	background-color: rgb(169, 23, 106);
 }
 
 .output a {
@@ -747,6 +778,11 @@ span.price {
 	font-weight: 100;
 }
 
+.price s {
+	font-size: 18px;
+	vertical-align: top;
+}
+
 .interiors {
 	padding-bottom: 25px;
 }
@@ -762,16 +798,16 @@ span.price {
 	transform: translateX(-25%);
 }
 
-.girls {
+section.girls {
 	background-color: rgb(237, 237, 237);
 	padding-bottom: 20px;
 }
 
-.girls .fade {
+section.girls .fade {
 	position: relative;
 }
 
-.girls img + span {
+section.girls img + span {
 	font-size: 24px;
 	line-height: 1;
 	color: white;
@@ -1074,4 +1110,177 @@ section.saunas .price {
 
 section.saunas a.btn {
 	background-color: rgb(233, 30, 145);
+}
+
+.actions .item {
+	display: block;
+	padding-bottom: 20px;
+	text-decoration: none;
+	color: inherit;
+}
+
+.actions .item:not(:last-of-type) {
+	border-bottom: 1px solid rgb(237, 237, 237);
+}
+
+.actions .item:not(:first-of-type) {
+	padding-top: 20px;
+}
+
+.actions .item b {
+	display: block;
+	margin-bottom: 15px;
+}
+
+.actions .item img {
+	width: 100%;
+	height: 95px;
+	object-fit: cover;
+	margin-bottom: 15px;
+}
+
+.actions .item p {
+	margin-bottom: 0;
+}
+
+.gallery .content img {
+	float: left;
+	width: 100%;
+}
+
+.girls .content {
+	background-color: rgb(237, 237, 237);
+	padding-bottom: 20px;
+}
+
+.girls .content .fade span {
+	font-size: 18px;
+}
+
+.girls .content a:last-of-type {
+	margin-bottom: 20px;
+}
+
+.girls .content .btn {
+	background-color: rgb(233, 30, 145);
+}
+
+.certificate .content {
+	padding-bottom: 20px;
+}
+
+.certificate .content .item:not(:last-of-type) {
+	margin-bottom: 50px;
+}
+
+.certificate .content .item:last-of-type {
+	margin-bottom: 30px;
+}
+
+.certificate .content img {
+	display: block;
+	max-width: 100%;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+
+.certificate .content .title {
+	font-family: Georgia;
+	font-size: 20px;
+}
+
+.certificate .content .price {
+	margin-bottom: 10px;
+}
+
+.certificate .content hr {
+	margin-bottom: 25px;
+}
+
+.contacts label {
+	display: inline-block;
+	width: 50%;
+	line-height: 50px;
+	color: white;
+	text-align: center;
+	background-color: rgb(35, 31, 32);
+	margin-bottom: 25px;
+}
+
+.contacts input:checked + label {
+	background-color: rgb(233, 30, 145);
+}
+
+.contacts [class^='tab-'] {
+	display: none;
+}
+
+.contacts #tab-1:checked ~ .tab-1,
+.contacts #tab-2:checked ~ .tab-2 {
+	display: block;
+}
+
+.contacts ul {
+	list-style: none;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+}
+
+.contacts a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.contacts li,
+.contacts .phone {
+	min-height: 50px;
+	margin-bottom: 25px;
+	padding-left: 65px;
+	position: relative;
+}
+
+.contacts .phone {
+	line-height: 50px;
+}
+
+.contacts .phone a {
+	vertical-align: middle;
+}
+
+.contacts svg {
+	font-size: 23px;
+	color: rgb(111, 28, 112);
+	position: absolute;
+	top: 50%;
+	left: 13px;
+	transform: translateY(-50%);
+}
+
+.contacts li::before,
+.contacts .phone::before {
+	content: '';
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: rgb(232, 232, 232);
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+}
+
+.contacts + section #map {
+	height: calc(100vh - 75px);
+	margin-bottom: 0;
+}
+
+.location img {
+	height: 218px;
+	object-fit: cover;
+}
+
+.location .owl-nav button {
+	transform: translate(0, -50%);
 }

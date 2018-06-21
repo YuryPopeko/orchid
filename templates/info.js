@@ -1,7 +1,7 @@
 document.write('\
 	<section>\
 		<h2 class="wrapper">Наш адрес</h2>\
-		<address class="wrapper">Санкт-Петербург, Кузнечный пер. 14А</address>\
+		<address class="wrapper">Санкт-Петербург, Кузнечный&nbsp;пер.&nbsp;14А</address>\
 		<div id="map"></div>\
 		<div class="contact">\
 			<a href="tel:88127645449">8 (812) 764-54-49</a><br>\
