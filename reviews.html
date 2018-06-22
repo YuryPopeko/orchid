@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
+<body class="reviews">
 	<script src="templates/svg-sprite.js"></script>
 	<script src="templates/header.js"></script>
 	<main>
@@ -17,7 +17,7 @@
 			<li><a href="index.html">Главная</a></li>
 			<li><a>Отзывы</a></li>
 		</ul>
-		<section class="reviews">
+		<section class="content">
 			<h1 class="wrapper">Отзывы</h1>
 			<div class="item wrapper">
 				<b>Vladimirovic</b>
@@ -68,17 +68,5 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoY77NK4l5PPF3rKREUDuhDFVBtFb7VYA&callback=initMap"
     async defer></script>
 	<script defer src="js/babel.js"></script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function(event) {
-			$('.interiors .owl-carousel').owlCarousel({
-				items: 2,
-				margin: 20,
-				autoHeight: true,
-				dots: false,
-				nav: true,
-				navText: arrows
-			});
-		});
-	</script>
 </body>
 </html>

@@ -13,6 +13,7 @@ document.write('\
 					<li><a href="">Вакансии</a></li>\
 					<li><a href="reviews.html">Отзывы</a></li>\
 					<li><a href="bar-menu.html">Меню бара</a></li>\
+					<li class="all"><a href="price-list.html" class="btn">Смотреть прайс-лист услуг</a></li>\
 				</ul>\
 			</li>\
 			<li>\
@@ -35,7 +36,7 @@ document.write('\
 			<li><a href="girls.html">Наши девушки</a></li>\
 			<li><a href="certificate.html">Сертификаты</a></li>\
 			<li><a href="contacts.html">Контакты</a></li>\
-			<li class="all"><a class="btn">Смотреть прайс-лист услуг</a></li>\
+			<li class="all"><a href="price-list.html" class="btn">Смотреть прайс-лист услуг</a></li>\
 		</ul>\
 	</header>\
 ');

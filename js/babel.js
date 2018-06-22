@@ -40,6 +40,17 @@ document.addEventListener('click', function (e) {
 		} else if (target.closest('button.back')) {
 
 			target.closest('.submenu').classList.remove('open');
+		} else if (target.closest('button.accordion')) {
+
+			var accordionBtn = target.closest('button.accordion');
+
+			accordionBtn.classList.toggle('active');
+			var panel = accordionBtn.nextElementSibling;
+			if (panel.style.maxHeight) {
+				panel.style.maxHeight = null;
+			} else {
+				panel.style.maxHeight = panel.scrollHeight + "px";
+			}
 		}
 });
 
