@@ -1029,6 +1029,9 @@ fieldset.room label {
 	line-height: 40px;
 	color: rgb(111, 28, 112);
 	background-color: rgb(237, 237, 237);
+	transition-property: background-color;
+	transition-duration: .35s;
+	transition-timing-function: ease-in-out;
 }
 
 fieldset.room input:checked + label {
@@ -1206,6 +1209,9 @@ section.saunas a.btn {
 	text-align: center;
 	background-color: rgb(35, 31, 32);
 	margin-bottom: 25px;
+	transition-property: background-color;
+	transition-duration: .35s;
+	transition-timing-function: ease-in-out;
 }
 
 .contacts input:checked + label {
