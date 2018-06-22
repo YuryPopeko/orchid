@@ -3,18 +3,18 @@ document.write('\
 		<h2 class="wrapper">Наши девушки</h2>\
 		<p class="wrapper">Посмотрите на наших красавиц</p>\
 		<div class="owl-carousel wrapper">\
-			<div class="fade">\
+			<a href="girl.html" class="fade">\
 				<img src="images/girl.jpg">\
 				<span>Ирина, 26</span>\
-			</div>\
-			<div class="fade">\
+			</a>\
+			<a href="girl.html" class="fade">\
 				<img src="images/services1.jpg">\
 				<span>Ирина, 26</span>\
-			</div>\
-			<div class="fade">\
+			</a>\
+			<a href="girl.html" class="fade">\
 				<img src="images/services2.jpg">\
 				<span>Ирина, 26</span>\
-			</div>\
+			</a>\
 		</div>\
 	</section>\
 	<script>\

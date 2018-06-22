@@ -29,6 +29,10 @@ p {
 	margin-top: 0;
 }
 
+img {
+	max-width: 100%;
+}
+
 hr {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -281,6 +285,11 @@ section.preview {
 	padding-top: 140px;
 }
 
+.massages section.preview {
+	background-image: url(../images/preview-massages.jpg);
+	padding-top: 150px;
+}
+
 body:not(.bar-menu) section.preview::after {
 	content: '';
 	width: 100%;
@@ -310,7 +319,7 @@ h1.big {
 }
 
 h1.single {
-	margin-bottom: 0;
+	margin-bottom: 0 !important;
 }
 
 .about h1 {
@@ -361,7 +370,8 @@ h1.single {
 }
 
 div.modal-feedback,
-div.modal-callback {
+div.modal-callback,
+div.modal-appointments {
 	padding-top: 65px;
 	padding-bottom: 15px;
 }
@@ -390,6 +400,20 @@ div[class*='modal-'] textarea {
 	resize: none;
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+div[class*='modal-'] input[type='submit'] {
+	margin-bottom: 10px;
+}
+
+div[class*='modal-'] p {
+	font-size: 14px;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+div[class*='modal-'] a {
+	color: rgb(54, 143, 190)
 }
 
 h1 + p,
@@ -600,7 +624,7 @@ a.fade {
 }
 
 a.fade img {
-	min-width: 100%;
+	object-fit: cover;
 	height: 100%;
 	position: absolute;
 	top: 50%;
@@ -770,10 +794,6 @@ a.btn:active {
 	z-index: 1;
 }
 
-.output img {
-	width: 100%;
-}
-
 span.price {
 	display: block;
 	color: #6f1c70;
@@ -797,9 +817,8 @@ span.price {
 }
 
 .interiors .owl-carousel img {
-	width: auto;
 	height: 100%;
-	transform: translateX(-25%);
+	object-fit: cover;
 }
 
 section.girls {
@@ -954,11 +973,6 @@ ul.breadcrumb li a {
 	color: inherit;
 }
 
-.bar-menu .content img {
-	width: 100%;
-	float: left;
-}
-
 .bar-menu .content img:not(:last-of-type) {
 	margin-bottom: 15px;
 }
@@ -1026,25 +1040,55 @@ fieldset.room span {
 	margin-bottom: 5px;
 }
 
+fieldset.room .wrapper {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
 fieldset.room label {
-	display: inline-block;
-	padding-right: 15px;
-	padding-left: 15px;
+	width: 32%;
 	line-height: 40px;
 	color: rgb(111, 28, 112);
 	background-color: rgb(237, 237, 237);
-	transition-property: background-color;
-	transition-duration: .35s;
-	transition-timing-function: ease-in-out;
+	margin-bottom: 5px;
+	text-transform: uppercase;
 }
 
-fieldset.room input:checked + label {
+#standart:checked ~ .room label[for='standart'],
+#vip-1:checked ~ .room label[for='vip-1'],
+#vip-2:checked ~ .room label[for='vip-2'],
+#vip-3:checked ~ .room label[for='vip-3'],
+#vip-4:checked ~ .room label[for='vip-4'],
+#gold:checked ~ .room label[for='gold'] {
 	color: white;
 	background-color: rgb(233, 30, 145);
 }
 
-.choose-variation img {
+.choose-variation .image {
+	position: relative;
+	height: 62.5vw;
+	margin-bottom: 30px;
+}
+
+.choose-variation .image img {
 	width: 100%;
+    height: 100%;
+    object-fit: cover;
+	position: absolute;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: .35s;
+	transition-timing-function: ease-in-out;
+}
+
+#trandart:checked ~ .image .trandart,
+#vip-1:checked ~ .image .vip-1,
+#vip-2:checked ~ .image .vip-2,
+#vip-3:checked ~ .image .vip-3,
+#vip-4:checked ~ .image .vip-4,
+#gold:checked ~ .image .gold {
+	opacity: 1;
 }
 
 .choose-variation p {
@@ -1152,7 +1196,6 @@ section.saunas a.btn {
 
 .gallery .content img {
 	float: left;
-	width: 100%;
 }
 
 .girls .content {
@@ -1186,7 +1229,6 @@ section.saunas a.btn {
 
 .certificate .content img {
 	display: block;
-	max-width: 100%;
 	margin-right: auto;
 	margin-bottom: 10px;
 	margin-left: auto;
@@ -1205,7 +1247,7 @@ section.saunas a.btn {
 	margin-bottom: 25px;
 }
 
-.contacts label {
+.tab {
 	display: inline-block;
 	width: 50%;
 	line-height: 50px;
@@ -1218,25 +1260,28 @@ section.saunas a.btn {
 	transition-timing-function: ease-in-out;
 }
 
-.contacts input:checked + label {
+input:checked + .tab {
 	background-color: rgb(233, 30, 145);
 }
 
-.contacts [class^='tab-'] {
+.contacts .content [class^='tab-'] {
 	display: none;
 }
 
-.contacts #tab-1:checked ~ .tab-1,
-.contacts #tab-2:checked ~ .tab-2 {
+.contacts .content #tab-1:checked ~ .tab-1,
+.contacts .content #tab-2:checked ~ .tab-2 {
 	display: block;
 }
 
 .circle-icon {
+	line-height: 1.375;
 	display: block;
 	min-height: 50px;
 	padding-left: 65px;
 	margin-bottom: 25px;
 	position: relative;
+	display: flex;
+	align-items: center;
 }
 
 .circle-icon::before {
@@ -1270,12 +1315,12 @@ a[href^='mailto:'].circle-icon::before {
 	background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBmaWxsPSJyZ2IoMTExLDI4LDExMikiPjxwYXRoIGQ9Ik0yNTYsMEMxMTQuNSwwLDAsMTE0LjUxLDAsMjU2UzExNC41MSw1MTIsMjU2LDUxMiw1MTIsMzk3LjQ5LDUxMiwyNTYsMzk3LjQ5LDAsMjU2LDBabTAsNDcyQTIxNiwyMTYsMCwxLDEsNDcyLDI1NiwyMTUuODgsMjE1Ljg4LDAsMCwxLDI1Niw0NzJaIj48L3BhdGg+PHBhdGggZD0iTTM2Ni4yOSwyOTguODUsMjc2LDI0NC42OFY5NmEyMCwyMCwwLDAsMC00MCwwVjI1NmEyMCwyMCwwLDAsMCw5LjcxLDE3LjE1bDEwMCw2MGEyMCwyMCwwLDAsMCwyMC41OC0zNC4zWiI+PC9wYXRoPjwvc3ZnPg==);
 }
 
-.contacts a {
+.contacts .content a {
 	color: inherit;
 	text-decoration: none;
 }
 
-.contacts + section #map {
+.contacts .content + section #map {
 	height: calc(100vh - 75px);
 	margin-bottom: 0;
 }
@@ -1351,4 +1396,45 @@ a[href^='mailto:'].circle-icon::before {
 
 .panel li span {
 	color: rgb(111, 28, 112);
+}
+
+.massages .output a {
+	display: none;
+}
+
+input#men:checked ~  .men,
+input#wooman:checked ~  .wooman {
+	display: block;
+}
+
+.girl .content h1 {
+	font-size: 24px;
+	line-height: 50px;
+	color: white;
+	background-color: rgb(111, 28, 112);
+	padding-right: 6.25vw;
+	padding-left: 6.25vw;
+}
+
+ul.parameters {
+	color: white;
+	list-style: none;
+	margin-top: 0;
+	margin-bottom: 30px;
+	background-color: rgb(200, 39, 138);
+	padding: 15px 6.25vw;
+}
+
+ul.parameters li {
+	display: inline-block;
+	width: 45%;
+}
+
+.girl .content {
+	padding-top: 0;
+	padding-bottom: 20px;
+}
+
+.girl .bulleted li {
+	margin-bottom: 10px;
 }

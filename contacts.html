@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
+<body class="contacts">
 	<script src="templates/svg-sprite.js"></script>
 	<script src="templates/header.js"></script>
 	<main>
@@ -17,10 +17,10 @@
 			<li><a href="index.html">Главная</a></li>
 			<li><a>Контакты</a></li>
 		</ul>
-		<section class="wrapper contacts">
+		<section class="wrapper content">
 			<h1>Контакты</h1>
 			<input type="radio" name="contacts" id="tab-1" hidden checked>
-			<label for="tab-1">Мы находимся</label><input type="radio" name="contacts" id="tab-2" hidden><label for="tab-2">Парковка</label>
+			<label for="tab-1" class="tab">Мы находимся</label><input type="radio" name="contacts" id="tab-2" hidden><label for="tab-2" class="tab">Парковка</label>
 			<div class="tab-1">
 				<address class="circle-icon">Санкт-Петербург, Кузнечный пер. 14А</address>
 				<a href="tel:88127645449" class="circle-icon">8 (812) 764-54-49</a>
@@ -62,7 +62,9 @@
 		<form method="post" class="wrapper">
 			<label>Имя<input type="text" name="name"></label>
 			<label>Номер телефона<input type="tel" name="phone"></label>
+			<label>Сообщение<textarea></textarea></label>
 			<input type="submit" value="Заказать звонок" class="btn violet">
+			<p>Нажимая на кнопку вы соглашаетесь с <a href="orchid-policy.pdf" target="_blank">политикой конфиденциальности</a></p>
 		</form>
 	</div>
 	<script src="js/jquery.min.js"></script>

@@ -47,20 +47,31 @@
 					<input type="radio" name="variation" hidden id="variation-2">
 					<label for="variation-2">90 минут, 2 девушки</label>
 				</fieldset>
+				<input type="radio" name="room" hidden id="standart">
+				<input type="radio" name="room" hidden id="vip-1" checked>
+				<input type="radio" name="room" hidden id="vip-2">
+				<input type="radio" name="room" hidden id="vip-3">
+				<input type="radio" name="room" hidden id="vip-4">
+				<input type="radio" name="room" hidden id="gold">
 				<fieldset class="room">
 					<span class="wrapper">Комната для массажа:</span>
 					<div class="wrapper">
-						<input type="radio" name="room" hidden id="vip-1" checked>
-						<label for="vip-1">VIP1</label>
-						<input type="radio" name="room" hidden id="vip-2">
-						<label for="vip-2">VIP2</label>
-						<input type="radio" name="room" hidden id="vip-3">
-						<label for="vip-3">VIP3</label>
-						<input type="radio" name="room" hidden id="gold">
-						<label for="gold">GOLD</label>
+						<label for="standart" class="tab">standart</label>
+						<label for="vip-1" class="tab">vip1</label>
+						<label for="vip-2" class="tab">vip2</label>
+						<label for="vip-3" class="tab">vip3</label>
+						<label for="vip-4" class="tab">vip4</label>
+						<label for="gold" class="tab">gold</label>
 					</div>
 				</fieldset>
-				<img src="images/interior-1.jpg" alt="spa-salon">
+				<div class="image">
+					<img src="images/standart.jpg" alt="standart room" class="standart">
+					<img src="images/vip-1.jpg" alt="vip 1 room" class="vip-1">
+					<img src="images/vip-2.jpg" alt="vip 2 room" class="vip-2">
+					<img src="images/vip-3.jpg" alt="vip 3 room" class="vip-3">
+					<img src="images/vip-4.jpg" alt="vip 4 room" class="vip-4">
+					<img src="images/gold.jpg" alt="gold room" class="gold">
+				</div>
 				<div class="wrapper total">
 					<b>Итоговая стоимость:</b>
 					<p>8000 руб. Без учета VIP карты</p>
