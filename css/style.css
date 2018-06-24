@@ -1,6 +1,6 @@
-* {
-	box-sizing: border-box;
-}
+*{box-sizing:border-box}
+[hidden]{display:none}
+img{max-width:100%}
 
 body {
 	margin: 0;
@@ -29,10 +29,6 @@ p {
 	margin-top: 0;
 }
 
-img {
-	max-width: 100%;
-}
-
 hr {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -40,8 +36,6 @@ hr {
 	border: 0;
 	background-color: rgb(237, 237, 237)
 }
-
-[hidden]{display: none}
 
 .wrapper {
 	width: 87.5%;
@@ -774,6 +768,10 @@ a.btn:active {
 	position: relative;
 }
 
+.output a img {
+	width: 100%;
+}
+
 .recommend::before {
 	content: 'КЛИЕНТЫ РЕКОМЕНДУЮТ';
 	font-size: 12px;
@@ -1032,6 +1030,8 @@ fieldset.room {
 	background-color: rgb(7, 7, 9);
 	padding-top: 15px;
 	padding-bottom: 13px;
+	position: relative;
+	z-index: 1;
 }
 
 fieldset.room span {
