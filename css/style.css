@@ -1030,8 +1030,6 @@ fieldset.room {
 	background-color: rgb(7, 7, 9);
 	padding-top: 15px;
 	padding-bottom: 13px;
-	position: relative;
-	z-index: 1;
 }
 
 fieldset.room span {
@@ -1069,6 +1067,7 @@ fieldset.room label {
 	position: relative;
 	height: 62.5vw;
 	margin-bottom: 30px;
+	overflow: hidden;
 }
 
 .choose-variation .image img {
