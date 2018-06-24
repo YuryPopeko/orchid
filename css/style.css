@@ -21,6 +21,7 @@ body {
 
 button {
 	font-family: inherit;
+	margin: 0;
 	padding: 0;
 	border: 0;
 }
@@ -1336,8 +1337,6 @@ a[href^='mailto:'].circle-icon::before {
 
 .accordion {
 	width: 100%;
-	margin-top: 0;
-	margin-bottom: 0;
 	padding-right: 6.25vw;
 	padding-left: 6.25vw;
 	background-color: rgb(233, 30, 145);
