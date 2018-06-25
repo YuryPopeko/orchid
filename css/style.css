@@ -239,6 +239,12 @@ section.preview {
 	position: relative;
 }
 
+section.preview > img {
+	height: 405px;
+	object-fit: cover;
+	float: left;
+}
+
 .index section.preview {
 	background-image: url(../images/preview-index.jpg);
 }
@@ -425,7 +431,7 @@ section.preview p {
 	margin-bottom: 60px;
 }
 
-.preview button {
+.preview button:not([class^='owl']) {
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
@@ -459,12 +465,15 @@ div[class*='modal-'] {
 	z-index: 2;
 	overflow-y: auto;
 	transform: scale(0);
-	transition-duration: .2s;
-	transition-timing-function: ease-in-out;
+	opacity: 0;
+	transition-property: transform, opacity;
+	transition-duration: .2s, .16s;
+	transition-timing-function: ease-in-out, ease-in-out;
 }
 
 div[class*='modal-'].open {
 	transform: initial;
+	opacity: initial;
 }
 
 div[class*='modal-'] .close {
@@ -849,13 +858,17 @@ section.girls img + span {
 }
 
 .owl-nav button {
+	position: absolute;
+}
+
+section:not(.preview) .owl-nav button {
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
 	background-color: white;
-	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .2);
-	position: absolute;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
 	font-size: 13px;
+	line-height: 1;
 	color: #333;
 }
 
@@ -1438,4 +1451,45 @@ ul.parameters li {
 
 .girl .bulleted li {
 	margin-bottom: 10px;
+}
+
+.girl .preview {
+	height: 515px;
+	padding-top: 0;
+}
+
+.preview .owl-carousel {
+	padding: 10px;
+	background-color: rgb(35, 31, 32);
+}
+
+.preview .owl-carousel .owl-nav {
+	width: calc(100% - 20px);
+}
+
+.preview .owl-carousel img {
+	width: 90px;
+	height: 90px;
+	object-fit: cover;
+}
+
+.preview .owl-carousel img.active {
+	outline: 3px solid white;
+	outline-offset: -3px;
+}
+
+.preview .owl-carousel .owl-prev {
+	left: 0;
+	transform: translate(50%, -50%) rotate(180deg);
+}
+
+.preview .owl-carousel button {
+	background-color: transparent;
+}
+
+.preview .owl-carousel button svg {
+	width: 17px;
+	height: 25px;
+	fill: white;
+	filter: drop-shadow(0 0 5px rgba(8, 10, 14, .4));
 }
