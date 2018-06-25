@@ -112,11 +112,11 @@ button.menu {
 ul.menu,
 ul.submenu {
 	width: 100vw;
-	height: calc(100vh - 75px);
+	min-height: calc(100vh - 75px);
 	overflow-y: auto;
 	margin: 0;
 	padding-left: 0;
-	padding-bottom: 50px;
+	padding-bottom: 15px;
 	list-style: none;
 	position: fixed;
 	top: 75px;
