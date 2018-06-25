@@ -100,6 +100,7 @@ header a[href*='tel:'] {
 	line-height: 1;
 	color: rgb(233, 30, 145);
 	text-decoration: none;
+	white-space: nowrap;
 }
 
 button.menu {
@@ -115,7 +116,7 @@ ul.submenu {
 	overflow-y: auto;
 	margin: 0;
 	padding-left: 0;
-	padding-bottom: 15px;
+	padding-bottom: 50px;
 	list-style: none;
 	position: fixed;
 	top: 75px;
@@ -372,7 +373,8 @@ h1.single {
 
 div.modal-feedback,
 div.modal-callback,
-div.modal-appointments {
+div.modal-appointments,
+div.modal-order {
 	padding-top: 65px;
 	padding-bottom: 15px;
 }
@@ -507,6 +509,10 @@ iframe {
 .modal-tour iframe {
 	width: 100%;
 	height: 100%;
+}
+
+.wrapper.owl-carousel {
+	width: 87.5%;
 }
 
 div[class*='modal-'] .owl-carousel {
@@ -1491,4 +1497,8 @@ ul.parameters li {
 	height: 25px;
 	fill: white;
 	filter: drop-shadow(0 0 5px rgba(8, 10, 14, .4));
+}
+
+.fancybox-navigation .fancybox-button {
+	transform: translateY(-50%);
 }

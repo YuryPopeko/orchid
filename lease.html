@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width=device-width">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
 </head>
 <body class="lease">
 	<script src="templates/svg-sprite.js"></script>
@@ -62,7 +62,7 @@
 						<li>зона отдыха.</li>
 					</ul>
 					<span class="price">3 000 руб./час</span>
-					<a href="" class="btn">Подробнее</a>
+					<button class="modal-order btn">Заказать</button>
 				</div>
 			</div>
 			<div class="item">
@@ -80,7 +80,7 @@
 						<li>джакузи.</li>
 					</ul>
 					<span class="price">3 500 руб./час</span>
-					<a href="" class="btn">Подробнее</a>
+					<button class="modal-order btn">Заказать</button>
 				</div>
 			</div>
 			<div class="item">
@@ -97,7 +97,7 @@
 						<li>зона отдыха.</li>
 					</ul>
 					<span class="price">3 500 руб./час</span>
-					<a href="" class="btn">Подробнее</a>
+					<button class="modal-order btn">Заказать</button>
 				</div>
 			</div>
 			<div class="item">
@@ -114,7 +114,7 @@
 						<li>зона отдыха.</li>
 					</ul>
 					<span class="price">2 500 руб./час</span>
-					<a href="" class="btn">Подробнее</a>
+					<button class="modal-order btn">Заказать</button>
 				</div>
 			</div>
 			<div class="item">
@@ -135,7 +135,7 @@
 						<li>сауна.</li>
 					</ul>
 					<span class="price">1 000 руб./час</span>
-					<a href="" class="btn">Подробнее</a>
+					<button class="modal-order btn">Заказать</button>
 				</div>
 			</div>
 		</section>
@@ -145,10 +145,22 @@
 	</main>
 	<script src="templates/footer.js"></script>
 	<script src="templates/modal-tour.js"></script>
+	<div class="modal-order">
+		<button type="button" class="close"><svg class="icon"><use xlink:href="#icon-close"></use></svg></button>
+		<h2 class="wrapper">Заказ VIP сауны салона Орхидея</h2>
+		<form method="post" class="wrapper">
+			<label>Имя *<input type="text" name="name" required></label>
+			<label>Номер телефона *<input type="tel" name="phone" required></label>
+			<label>E-mail<input type="email" name="email"></label>
+			<label>Сообщение<textarea></textarea></label>
+			<input type="submit" value="Заказать" class="btn violet">
+			<p>Нажимая на кнопку вы соглашаетесь с <a href="orchid-policy.pdf" target="_blank">политикой конфиденциальности</a></p>
+		</form>
+	</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
+	<script defer src="js/babel.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoY77NK4l5PPF3rKREUDuhDFVBtFb7VYA&callback=initMap"
     async defer></script>
-	<script defer src="js/babel.js"></script>
 </body>
 </html>

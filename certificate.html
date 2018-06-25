@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width=device-width">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
 </head>
 <body class="certificate">
 	<script src="templates/svg-sprite.js"></script>
@@ -54,8 +54,8 @@
 					<li>Эротический массаж (1ч.);</li>
 					<li>Мыльный массаж (1 ч.).</li>
 				</ul>
-				<span class="price">3 500 руб./час</span>
-				<a href="" class="btn">Подробнее</a>
+				<span class="price">3 500 руб.</span>
+				<button class="modal-order btn">Заказать</button>
 			</div>
 			<div class="item">
 				<img src="images/bronze.png" alt="">
@@ -66,8 +66,8 @@
 					<li>Эротический массаж в 4 руки;</li>
 					<li>Программа «Премиум».</li>
 				</ul>
-				<span class="price">5 500 руб./час</span>
-				<a href="" class="btn">Подробнее</a>
+				<span class="price">5 500 руб.</span>
+				<button class="modal-order btn">Заказать</button>
 			</div>
 			<div class="item">
 				<img src="images/golden.png" alt="">
@@ -78,8 +78,8 @@
 					<li>Массаж для семейной пары (1 ч.).</li>
 					<li>Комплекс SPA-процедур «Султан» и VIP1 и VIP4.</li>
 				</ul>
-				<span class="price">8 500 руб./час</span>
-				<a href="" class="btn">Подробнее</a>
+				<span class="price">8 500 руб.</span>
+				<button class="modal-order btn">Заказать</button>
 			</div>
 			<div class="item">
 				<img src="images/platinum.png" alt="">
@@ -90,8 +90,8 @@
 					<li>эротический массаж в 4 руки;</li>
 					<li>программа «Премиум».</li>
 				</ul>
-				<span class="price"><s>12 000</s> 9 000 руб./час</span>
-				<a href="" class="btn">Подробнее</a>
+				<span class="price"><s>12 000</s> 9 000 руб.</span>
+				<button class="modal-order btn">Заказать</button>
 			</div>
 			<hr>
 			<img src="images/action-1.jpg">
@@ -103,10 +103,23 @@
 	</main>
 	<script src="templates/footer.js"></script>
 	<script src="templates/modal-tour.js"></script>
+	<div class="modal-order">
+		<button type="button" class="close"><svg class="icon"><use xlink:href="#icon-close"></use></svg></button>
+		<h2 class="wrapper">Заказ сертификата</h2>
+		<form method="post" class="wrapper">
+			<label>Имя *<input type="text" name="name" required></label>
+			<label>Номер телефона *<input type="tel" name="phone" required></label>
+			<label>E-mail<input type="email" name="email"></label>
+			<label>Сообщение<textarea></textarea></label>
+			<input type="submit" value="Заказать" class="btn violet">
+			<p>Нажимая на кнопку вы соглашаетесь с <a href="orchid-policy.pdf" target="_blank">политикой конфиденциальности</a></p>
+			<p>Сертификат можно заказать переводом на банковскую карту</p>
+		</form>
+	</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
+	<script defer src="js/babel.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoY77NK4l5PPF3rKREUDuhDFVBtFb7VYA&callback=initMap"
     async defer></script>
-	<script defer src="js/babel.js"></script>
 </body>
 </html>
