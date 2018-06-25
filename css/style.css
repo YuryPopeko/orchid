@@ -1096,7 +1096,7 @@ fieldset.room label {
 	transition-timing-function: ease-in-out;
 }
 
-#trandart:checked ~ .image .trandart,
+#standart:checked ~ .image .standart,
 #vip-1:checked ~ .image .vip-1,
 #vip-2:checked ~ .image .vip-2,
 #vip-3:checked ~ .image .vip-3,
@@ -1471,11 +1471,11 @@ ul.parameters li {
 	width: 90px;
 	height: 90px;
 	object-fit: cover;
+	margin: 0;
 }
 
 .preview .owl-carousel img.active {
-	outline: 3px solid white;
-	outline-offset: -3px;
+	border: 3px solid white;
 }
 
 .preview .owl-carousel .owl-prev {
