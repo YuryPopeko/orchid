@@ -76,7 +76,7 @@
 					<b>Итоговая стоимость:</b>
 					<p>8000 руб. Без учета VIP карты</p>
 					<span class="price">9 900 руб.</span>
-					<input type="submit" value="Заказать" class="btn">
+					<button type="submit" class="modal-order btn">Заказать</button>
 				</div>
 			</form>
 			<div class="video">
@@ -101,6 +101,17 @@
 		<script src="templates/info.js"></script>
 	</main>
 	<script src="templates/footer.js"></script>
+	<div class="modal-order">
+		<button type="button" class="close"><svg class="icon"><use xlink:href="#icon-close"></use></svg></button>
+		<h2 class="wrapper">Заказ массажа</h2>
+		<form method="post" class="wrapper">
+			<label>Имя *<input type="text" name="name" required></label>
+			<label>Номер телефона *<input type="tel" name="phone" required></label>
+			<label>Сообщение<textarea></textarea></label>
+			<input type="submit" value="Заказать" class="btn violet">
+			<p>Нажимая на кнопку вы соглашаетесь с <a href="orchid-policy.pdf" target="_blank">политикой конфиденциальности</a></p>
+		</form>
+	</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script defer src="js/babel.js"></script>
