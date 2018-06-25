@@ -65,8 +65,8 @@
 		<button type="button" class="close"><svg class="icon"><use xlink:href="#icon-close"></use></svg></button>
 		<h2 class="wrapper">Записаться к девушке</h2>
 		<form method="post" class="wrapper">
-			<label>Имя<input type="text" name="name"></label>
-			<label>E-mail<input type="email" name="email"></label>
+			<label>Имя *<input type="text" name="name" required></label>
+			<label>E-mail *<input type="email" name="email" required></label>
 			<label>Сообщение<textarea></textarea></label>
 			<input type="submit" value="Записаться к девушке" class="btn violet">
 			<p>Нажимая на кнопку вы соглашаетесь с <a href="orchid-policy.pdf" target="_blank">политикой конфиденциальности</a></p>
@@ -86,10 +86,10 @@
 			margin: 10
 		});
 
-		const girlPhoto = document.querySelector('img.main');
+		var girlPhoto = document.querySelector('img.main');
 
 		document.querySelector('.owl-carousel').addEventListener('click', function(e) {
-			const target = e.target;
+			var target = e.target;
 			
 			if (target.tagName !== 'IMG') return;
 
