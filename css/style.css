@@ -112,7 +112,7 @@ button.menu {
 ul.menu,
 ul.submenu {
 	width: 100vw;
-	min-height: calc(100vh - 75px);
+	height: calc(100vh - 75px);
 	overflow-y: auto;
 	margin: 0;
 	padding-left: 0;
@@ -522,6 +522,7 @@ div[class*='modal-'] .owl-carousel {
 }
 
 [class*='resume'] .buttons {
+	display: flex;
 	background-color: rgb(181, 26, 125);
 	background-image: linear-gradient(90deg, rgb(181, 26, 125) 0%, rgb(228, 58, 157) 100%);
 	color: white;
