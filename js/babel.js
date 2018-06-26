@@ -86,6 +86,22 @@ function scrollAfterClose() {
 	});
 })();
 
+(function pricesFormatting() {
+
+	var prices = document.querySelectorAll('.price');
+	if (!prices.length) return;
+
+	prices.forEach(function (item) {
+		item.innerHTML = item.textContent.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1&#8202;');
+	});
+})();
+
+function togglePriceList(value) {
+
+	document.querySelector('.select-content.active').classList.remove('active');
+	document.querySelector('.select-content.' + value).classList.add('active');
+}
+
 function initMap() {
 
 	var map,

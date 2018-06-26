@@ -2,6 +2,13 @@
 [hidden]{display:none}
 img{max-width:100%}
 
+@font-face {
+	font-family: 'ALS Rubl';
+	font-style: normal;
+	font-weight: normal;
+	src: local('ALS Rubl'), url('../fonts/rouble.woff') format('woff');
+}
+
 body {
 	margin: 0;
 	font-family:
@@ -815,17 +822,52 @@ a.btn:active {
 	z-index: 1;
 }
 
-span.price {
+a .price,
+.item .price {
 	display: block;
 	color: #6f1c70;
 	font-size: 21px;
 	line-height: 1.14;
-	font-weight: 100;
 }
 
-.price s {
+.item s + .price {
+	display: inline-block;
+}
+
+.price::after {
+	content: '\200A''a';
+	font-family: ALS Rubl;
+}
+
+.item s.price {
+	display: inline-block;
 	font-size: 18px;
+	line-height: 1;
 	vertical-align: top;
+}
+
+.star::before,
+.star::after {
+	color: rgb(235, 79, 162);
+}
+
+li.star::after {
+	content: '\200A''*';
+}
+
+p.star::before {
+	content: '*''\200A';
+}
+
+.time {
+	position: relative;
+}
+
+.time::before {
+	content: '/час';
+	position: absolute;
+	left: 65px;
+	bottom: 0;
 }
 
 .interiors {
@@ -895,10 +937,6 @@ section:not(.preview) .owl-nav button {
 
 .owl-prev svg {
 	transform: rotate(180deg);
-}
-
-.owl-nav .disabled svg {
-	opacity: .5;
 }
 
 .instagram .owl-item {
@@ -1364,8 +1402,9 @@ a[href^='mailto:'].circle-icon::before {
 	width: 100%;
 	padding: 14px 6.25vw;
 	padding-left: 6.25vw;
-	background-color: rgb(233, 30, 145);
-	color: white;
+	color: black;
+	background-color: transparent;
+	border-top: 1px solid rgb(226, 226, 226);
 	font-size: initial;
 	line-height: 22px;
 	text-align: left;
@@ -1373,6 +1412,16 @@ a[href^='mailto:'].circle-icon::before {
 	transition-property: background-color;
 	transition-duration: .35s;
 	transition-timing-function: ease-in-out;
+}
+
+.accordion:last-of-type,
+.accordion.active {
+	border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.accordion.active,
+.accordion.active + .panel {
+	background-color: rgb(243, 243, 243);
 }
 
 .accordion svg {
@@ -1397,7 +1446,43 @@ a[href^='mailto:'].circle-icon::before {
 	transition-timing-function: ease-in-out, ease-in-out;
 }
 
-.panel > div {
+.panel > p {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-bottom: 0;
+}
+
+select {
+	width: 100%;
+	height: 50px;
+	border: 0;
+	padding-left: 6.25vw;
+	background-color: rgb(233, 30, 145);
+	color: white;
+	font-size: initial;
+	line-height: 50px;
+}
+
+.select {
+	position: relative;
+}
+
+.select::after {
+	content: '';
+	width: 50px;
+	height: 50px;
+	background-color: rgb(233, 30, 145);
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NTEuNjEgMjU3LjkzIiBmaWxsPSJyZ2IoMjU1LDI1NSwyNTUpIj48cGF0aCBkPSJNMjI2LjI4LDI1Ny45M2EzMS41NSwzMS41NSwwLDAsMS0yMi4zNy05LjI2TDkuNjIsNTQuMzZhMzEuNjQsMzEuNjQsMCwwLDEsNDQtNDUuNDVsLjcxLjcyTDIyNi4yOCwxODEuNTQsMzk4LjIsOS42M2EzMS42NCwzMS42NCwwLDAsMSw0NC43Myw0NC43M0wyNDguNjUsMjQ4LjY3QTMxLjU1LDMxLjU1LDAsMCwxLDIyNi4yOCwyNTcuOTNaIi8+PC9zdmc+);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 16px auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+	pointer-events: none;
+}
+
+.select-content > div {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	border-top: 1px solid rgb(214, 214, 214);
@@ -1405,26 +1490,22 @@ a[href^='mailto:'].circle-icon::before {
 	border-left: 1px solid rgb(214, 214, 214);
 }
 
-.panel > div:last-of-type {
+.select-content > div:last-of-type {
 	border-bottom: 1px solid rgb(214, 214, 214);
 }
 
-.panel > div:nth-child(odd) {
+.select-content > div:nth-child(odd) {
 	background-color: rgb(235, 235, 235);
 }
 
-.panel h2 {
+.select-content h2 {
 	font-family: inherit;
 	font-size: 22px;
 	color: rgb(111, 28, 112);
 	margin-bottom: 15px;
 }
 
-.panel li {
-	white-space: pre-wrap;
-}
-
-.panel li span {
+.select-content .staff {
 	color: rgb(111, 28, 112);
 }
 
@@ -1513,27 +1594,10 @@ ul.parameters li {
 	transform: translateY(-50%);
 }
 
-.vacancies .accordion {
-	color: black;
-	background-color: transparent;
+.select-content {
+	margin-bottom: 15px;
 }
 
-.vacancies .accordion {
-	border-top: 1px solid rgb(226, 226, 226);
-}
-
-.vacancies .accordion:last-of-type,
-.vacancies .accordion.active {
-	border-bottom: 1px solid rgb(226, 226, 226);
-}
-
-.vacancies .panel > p {
-	padding-top: 15px;
-	padding-bottom: 15px;
-	margin-bottom: 0;
-}
-
-.vacancies .accordion.active,
-.vacancies .accordion.active + .panel {
-	background-color: rgb(243, 243, 243);
+.select-content:not(.active) {
+	display: none;
 }
