@@ -55,7 +55,7 @@
 					<li>Мыльный массаж (1 ч.).</li>
 				</ul>
 				<span class="price">3 500 руб.</span>
-				<button class="modal-order btn">Заказать</button>
+				<button class="modal-order btn" title="Заказ серебряного сертификата">Заказать</button>
 			</div>
 			<div class="item">
 				<img src="images/bronze.png" alt="">
@@ -67,7 +67,7 @@
 					<li>Программа «Премиум».</li>
 				</ul>
 				<span class="price">5 500 руб.</span>
-				<button class="modal-order btn">Заказать</button>
+				<button class="modal-order btn" title="Заказ бронзового сертификата">Заказать</button>
 			</div>
 			<div class="item">
 				<img src="images/golden.png" alt="">
@@ -79,7 +79,7 @@
 					<li>Комплекс SPA-процедур «Султан» и VIP1 и VIP4.</li>
 				</ul>
 				<span class="price">8 500 руб.</span>
-				<button class="modal-order btn">Заказать</button>
+				<button class="modal-order btn" title="Заказ золотого сертификата">Заказать</button>
 			</div>
 			<div class="item">
 				<img src="images/platinum.png" alt="">
@@ -91,10 +91,10 @@
 					<li>программа «Премиум».</li>
 				</ul>
 				<span class="price"><s>12 000</s> 9 000 руб.</span>
-				<button class="modal-order btn">Заказать</button>
+				<button class="modal-order btn" title="Заказ платинового сертификата">Заказать</button>
 			</div>
 			<hr>
-			<img src="images/action-1.jpg">
+			<img src="images/action-1.jpg" alt="taxi">
 			<strong>Сертификат доставляется бесплатно курьером по Санкт-Петербургу</strong>
 		</section>
 		<script src="templates/girls.js"></script>
@@ -105,13 +105,13 @@
 	<script src="templates/modal-tour.js"></script>
 	<div class="modal-order">
 		<button type="button" class="close"><svg class="icon"><use xlink:href="#icon-close"></use></svg></button>
-		<h2 class="wrapper">Заказ сертификата</h2>
+		<h2 class="wrapper insert"></h2>
 		<form method="post" class="wrapper">
 			<label>Имя *<input type="text" name="name" required></label>
 			<label>Номер телефона *<input type="tel" name="phone" required></label>
 			<label>E-mail<input type="email" name="email"></label>
 			<label>Сообщение<textarea></textarea></label>
-			<input type="submit" value="Заказать" class="btn violet">
+			<input type="submit" value="Заказать" class="btn">
 			<p>Нажимая на кнопку вы соглашаетесь с <a href="orchid-policy.pdf" target="_blank">политикой конфиденциальности</a></p>
 			<p>Сертификат можно заказать переводом на банковскую карту</p>
 		</form>

@@ -39,7 +39,7 @@
 		</div>
 		<section class="choose-variation">
 			<h2 class="visually-hidden">Подберите массаж</h2>
-			<form method="post">
+			<form method="post" onsubmit="event.preventDefault()">
 				<fieldset class="variation wrapper">
 					<b>Выберите удобный вариант программы:</b>
 					<input type="radio" name="variation" hidden id="variation-1" checked>
@@ -76,7 +76,7 @@
 					<b>Итоговая стоимость:</b>
 					<p>8000 руб. Без учета VIP карты</p>
 					<span class="price">9 900 руб.</span>
-					<button type="submit" class="modal-order btn">Заказать</button>
+					<button type="submit" class="modal-order btn" title="Заказ спа-комплекса «Дольче Вита»">Заказать</button>
 				</div>
 			</form>
 			<div class="video">
@@ -84,12 +84,12 @@
 			</div>
 			<section class="output wrapper">
 				<h2>Другие услуги</h2>
-				<a href="">
+				<a href="dolce-vita.html">
 					<img src="images/program1.jpg" alt="Авторская программа">
 					<b>Авторская программа</b>
 					<span class="price">9 900 руб.</span>
 				</a>
-				<a href="" class="recommend">
+				<a href="dolce-vita.html" class="recommend">
 					<img src="images/program2.jpg" alt="Массаж ног “Ветка сакуры”">
 					<b>Массаж ног “Ветка сакуры”</b>
 					<span class="price">4 900 руб.</span>
@@ -103,12 +103,12 @@
 	<script src="templates/footer.js"></script>
 	<div class="modal-order">
 		<button type="button" class="close"><svg class="icon"><use xlink:href="#icon-close"></use></svg></button>
-		<h2 class="wrapper">Заказ массажа</h2>
+		<h2 class="wrapper insert"></h2>
 		<form method="post" class="wrapper">
 			<label>Имя *<input type="text" name="name" required></label>
 			<label>Номер телефона *<input type="tel" name="phone" required></label>
 			<label>Сообщение<textarea></textarea></label>
-			<input type="submit" value="Заказать" class="btn violet">
+			<input type="submit" value="Заказать" class="btn">
 			<p>Нажимая на кнопку вы соглашаетесь с <a href="orchid-policy.pdf" target="_blank">политикой конфиденциальности</a></p>
 		</form>
 	</div>

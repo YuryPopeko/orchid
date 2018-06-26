@@ -25,6 +25,12 @@ document.addEventListener('click', function(e) {
 		scrollAfterOpen();
 		
 		const modalWindow = document.querySelector('div.' + target.closest('[class*=modal-]').classList[0]);
+		const modalTitle = modalWindow.querySelector('h2');
+
+		if (target.hasAttribute('title') && modalTitle.classList.contains('insert')) {
+			modalTitle.textContent = target.title
+		}
+
 		document.body.classList.add('modal');
 		modalWindow.classList.add('open')
 

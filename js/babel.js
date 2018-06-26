@@ -24,6 +24,12 @@ document.addEventListener('click', function (e) {
 			scrollAfterOpen();
 
 			var modalWindow = document.querySelector('div.' + target.closest('[class*=modal-]').classList[0]);
+			var modalTitle = modalWindow.querySelector('h2');
+
+			if (target.hasAttribute('title') && modalTitle.classList.contains('insert')) {
+				modalTitle.textContent = target.title;
+			}
+
 			document.body.classList.add('modal');
 			modalWindow.classList.add('open');
 		} else if (target.closest('button.menu')) {
