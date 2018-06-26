@@ -24,7 +24,8 @@ document.write('\
 				autoHeight: true,\
 				dots: false,\
 				nav: true,\
-				navText: arrows\
+				navText: arrows,\
+				loop: true\
 			});\
 		});\
 	</script>\

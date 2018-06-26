@@ -10,7 +10,7 @@ document.write('\
 				<ul class="submenu">\
 					<li><button type="button" class="back"><svg class="icon"><use xlink:href="#icon-arrow"></use></svg>Вернуться назад</button></li>\
 					<li><a href="about.html">О салоне</a></li>\
-					<li><a href="">Вакансии</a></li>\
+					<li><a href="vacancies.html">Вакансии</a></li>\
 					<li><a href="reviews.html">Отзывы</a></li>\
 					<li><a href="bar-menu.html">Меню бара</a></li>\
 					<li class="all"><a href="price-list.html" class="btn">Смотреть прайс-лист услуг</a></li>\

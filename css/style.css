@@ -278,6 +278,11 @@ section.preview > img {
 	padding-top: 180px;
 }
 
+.vacancies section.preview {
+	background-image: url(../images/preview-vacancies.jpg);
+	padding-top: 180px;
+}
+
 .girls section.preview {
 	background-image: url(../images/preview-girls.jpg);
 }
@@ -1357,13 +1362,17 @@ a[href^='mailto:'].circle-icon::before {
 
 .accordion {
 	width: 100%;
-	padding-right: 6.25vw;
+	padding: 14px 6.25vw;
 	padding-left: 6.25vw;
 	background-color: rgb(233, 30, 145);
 	color: white;
-	line-height: 50px;
+	font-size: initial;
+	line-height: 22px;
 	text-align: left;
 	position: relative;
+	transition-property: background-color;
+	transition-duration: .35s;
+	transition-timing-function: ease-in-out;
 }
 
 .accordion svg {
@@ -1383,9 +1392,9 @@ a[href^='mailto:'].circle-icon::before {
 .panel {
 	max-height: 0;
 	overflow: hidden;
-	transition-property: max-height;
-	transition-duration: .35s;
-	transition-timing-function: ease-in-out;
+	transition-property: max-height, background-color;
+	transition-duration: .35s, .35s;
+	transition-timing-function: ease-in-out, ease-in-out;
 }
 
 .panel > div {
@@ -1502,4 +1511,29 @@ ul.parameters li {
 
 .fancybox-navigation .fancybox-button {
 	transform: translateY(-50%);
+}
+
+.vacancies .accordion {
+	color: black;
+	background-color: transparent;
+}
+
+.vacancies .accordion {
+	border-top: 1px solid rgb(226, 226, 226);
+}
+
+.vacancies .accordion:last-of-type,
+.vacancies .accordion.active {
+	border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.vacancies .panel > p {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-bottom: 0;
+}
+
+.vacancies .accordion.active,
+.vacancies .accordion.active + .panel {
+	background-color: rgb(243, 243, 243);
 }

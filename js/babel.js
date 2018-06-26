@@ -75,32 +75,24 @@ function scrollAfterClose() {
 	}, 0);
 }
 
-var map,
-    orchid = { lat: 59.9271230, lng: 30.3546023 },
-    hotel = { lat: 59.9302777, lng: 30.3612273 },
-    vladimirskaya = { lat: 59.9275064, lng: 30.3479397 },
-    markerPedestrian = 'images/pedestrian.png';
+(function setActiveAccordionsHeight() {
 
-function drawPath(place) {
+	var activeAccordions = document.querySelectorAll('.accordion.active');
+	if (!activeAccordions.length) return;
 
-	return {
-		path: place,
-		strokeOpacity: 0,
-		icons: [{
-			icon: {
-				path: 'M 0,-1 0,1',
-				strokeOpacity: .5,
-				scale: 4,
-				strokeColor: "rgb(234, 45, 152)",
-				strokeWeight: 5
-			},
-			offset: '0',
-			repeat: '20px'
-		}]
-	};
-}
+	activeAccordions.forEach(function (item) {
+		var panel = item.nextElementSibling;
+		panel.style.maxHeight = panel.scrollHeight + "px";
+	});
+})();
 
 function initMap() {
+
+	var map,
+	    orchid = { lat: 59.9271230, lng: 30.3546023 },
+	    hotel = { lat: 59.9302777, lng: 30.3612273 },
+	    vladimirskaya = { lat: 59.9275064, lng: 30.3479397 },
+	    markerPedestrian = 'images/pedestrian.png';
 
 	map = new google.maps.Map(document.getElementById('map'), {
 
@@ -132,4 +124,23 @@ function initMap() {
 
 	lineHotel.setMap(map);
 	lineVladimrskaya.setMap(map);
+
+	function drawPath(place) {
+
+		return {
+			path: place,
+			strokeOpacity: 0,
+			icons: [{
+				icon: {
+					path: 'M 0,-1 0,1',
+					strokeOpacity: .5,
+					scale: 4,
+					strokeColor: "rgb(234, 45, 152)",
+					strokeWeight: 5
+				},
+				offset: '0',
+				repeat: '20px'
+			}]
+		};
+	}
 }
