@@ -10,31 +10,10 @@ document.addEventListener('click', function(e) {
 	const target = e.target;
 
 	// закрытие модального окна
-	if (target.closest('button.close')) {
-
-		scrollAfterClose();
-
-		target.closest('button.close').parentElement.classList.remove('open');
-		document.body.classList.remove('modal')
-
-	}
+	if (target.closest('button.close')) modalClose(target)
 
 	// открытие модального окна
-	else if (target.closest('[class*=modal-]')) {
-
-		scrollAfterOpen();
-		
-		const modalWindow = document.querySelector('div.' + target.closest('[class*=modal-]').classList[0]);
-		const modalTitle = modalWindow.querySelector('h2');
-
-		if (target.hasAttribute('title') && modalTitle.classList.contains('insert')) {
-			modalTitle.textContent = target.title
-		}
-
-		document.body.classList.add('modal');
-		modalWindow.classList.add('open')
-
-	}
+	else if (target.closest('[class*=modal-]')) modalOpen(target)
 
 	else if (target.closest('button.menu')) {
 
@@ -81,6 +60,8 @@ document.addEventListener('click', function(e) {
 // открывая меню, устанвить top: прокручено пикселей
 function scrollAfterOpen() {
 
+	if(!scrolledTop) return;
+
 	scrolledTop = window.pageYOffset || document.documentElement.scrollTop;
 	document.body.style.top = '-' + scrolledTop + 'px';
 
@@ -88,8 +69,39 @@ function scrollAfterOpen() {
 // закрывая, прокрутить на это значение
 function scrollAfterClose() {
 
+	if(!scrolledTop) return;
+
 	document.body.style.top = '';
 	setTimeout( () => { window.scrollTo(0, scrolledTop) }, 0);
+
+}
+
+
+
+function modalOpen(target) {
+
+	scrollAfterOpen();
+
+	const modalWindow = document.querySelector('div.' + target.closest('[class*=modal-]').classList[0]);
+	const modalTitle = modalWindow.querySelector('h2');
+
+	if (target.hasAttribute('title') && modalTitle.classList.contains('insert')) {
+		modalTitle.textContent = target.title
+	}
+
+	document.body.classList.add('modal');
+	modalWindow.classList.add('open')
+
+}
+
+
+
+function modalClose(target) {
+
+	scrollAfterClose();
+
+	target.closest('button.close').parentElement.classList.remove('open');
+	document.body.classList.remove('modal')
 
 }
 
