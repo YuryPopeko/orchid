@@ -60,8 +60,6 @@ document.addEventListener('click', function(e) {
 // открывая меню, устанвить top: прокручено пикселей
 function scrollAfterOpen() {
 
-	if(!scrolledTop) return;
-
 	scrolledTop = window.pageYOffset || document.documentElement.scrollTop;
 	document.body.style.top = '-' + scrolledTop + 'px';
 

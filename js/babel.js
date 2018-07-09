@@ -1,3 +1,5 @@
+// ПОДДЕРЖИВАЕМ ФАЙЛ script.js НА ES6, СЮДА ВСТАВЛЯЕМ ТРАНСПИЛЕННЫЙ КОД
+
 'use strict';
 
 var scrolledTop = 0;
@@ -43,8 +45,6 @@ document.addEventListener('click', function (e) {
 
 // открывая меню, устанвить top: прокручено пикселей
 function scrollAfterOpen() {
-
-	if (!scrolledTop) return;
 
 	scrolledTop = window.pageYOffset || document.documentElement.scrollTop;
 	document.body.style.top = '-' + scrolledTop + 'px';

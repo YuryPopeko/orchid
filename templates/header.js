@@ -13,6 +13,7 @@ document.write('\
 					<li><a href="vacancies.html">Вакансии</a></li>\
 					<li><a href="reviews.html">Отзывы</a></li>\
 					<li><a href="bar-menu.html">Меню бара</a></li>\
+					<li><a href="faq.html">Вопросы и ответы</a></li>\
 					<li class="all"><a href="price-list.html" class="btn">Смотреть прайс-лист услуг</a></li>\
 				</ul>\
 			</li>\

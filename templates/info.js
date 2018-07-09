@@ -1,5 +1,5 @@
 document.write('\
-	<section>\
+	<section class="info">\
 		<h2 class="wrapper">Наш адрес</h2>\
 		<address class="wrapper">Санкт-Петербург, Кузнечный&nbsp;пер.&nbsp;14А</address>\
 		<div id="map"></div>\

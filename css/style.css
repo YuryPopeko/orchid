@@ -1,6 +1,7 @@
 *{box-sizing:border-box}
 [hidden]{display:none}
 img{max-width:100%}
+address{font-style:normal}
 
 @font-face {
 	font-family: 'ALS Rubl';
@@ -160,7 +161,7 @@ body.menu ul.menu,
 }
 
 ul.menu li {
-	border-top: 1px solid #ebebeb;
+	border-top: 1px solid rgb(235, 235, 235);
 }
 
 ul.menu li:not(.language) > *:first-child,
@@ -304,6 +305,11 @@ section.preview > img {
 	padding-top: 150px;
 }
 
+.faq section.preview {
+	background-image: url(../images/preview-faq.jpg);
+	padding-top: 150px;
+}
+
 body:not(.bar-menu) section.preview::after {
 	content: '';
 	width: 100%;
@@ -347,23 +353,56 @@ h1.single {
 	text-transform: uppercase;
 }
 
-.reviews .content {
+.reviews .content,
+.faq .content {
 	background-color: rgb(245, 245, 245);
 	padding-bottom: 35px;
 }
 
-.reviews .content .item:not(:last-of-type) {
+.reviews .content .item:not(:last-of-type),
+.faq .content .item:not(:last-of-type) {
 	margin-bottom: 30px;
 }
 
-.reviews .content .item b {
+.reviews .content .item b,
+.faq .content .item b,
+.question-answer div b {
 	font-size: 20px;
 	font-weight: 500;
 	display: block;
 	margin-bottom: 5px;
 }
 
-.reviews .content .item p {
+.question-answer .question {
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgb(226, 226, 226);
+	margin-bottom: 20px;
+}
+
+.question-answer div p {
+	font-size: 18px;
+	margin-bottom: 0;
+}
+
+.question-answer .answer div {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.question-answer .answer img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	margin-right: 15px;
+}
+
+.question-answer .answer span:first-of-type {
+	color: rgb(148, 32, 50);
+}
+
+.reviews .content .item p,
+.faq .content .item p {
 	font-size: 18px;
 	margin-bottom: 5px;
 }
@@ -373,16 +412,23 @@ h1.single {
 	color: rgb(233, 30, 145);
 }
 
+.faq time {
+	font-size: 18px;
+	color: rgb(111, 28, 112);
+}
+
+.faq .content .item a {
+	text-decoration: none;
+	color: rgb(233, 30, 145);
+}
+
 .feedback {
 	padding-top: 40px;
 	padding-bottom: 40px;
 	background-color: rgb(237, 237, 237);
 }
 
-div.modal-feedback,
-div.modal-callback,
-div.modal-appointments,
-div.modal-order {
+div[class*='modal-']:not([class*='-gallery']):not([class*='-tour']) {
 	padding-top: 65px;
 	padding-bottom: 15px;
 }
@@ -427,7 +473,8 @@ div[class*='modal-'] a {
 }
 
 h1 + p,
-h2 + p {
+h2 + p,
+.info address {
 	margin-top: 0;
 	margin-bottom: 10px;
 }
@@ -818,9 +865,10 @@ a.btn:active {
 }
 
 a .price,
-.item .price {
+.item .price,
+.choose-variation .total > .price {
 	display: block;
-	color: #6f1c70;
+	color: rgb(111, 28, 112);
 	font-size: 21px;
 	line-height: 1.14;
 }
@@ -943,10 +991,6 @@ section:not(.preview) .owl-nav button {
 	object-fit: cover;
 }
 
-address {
-	font-style: normal;
-}
-
 #map {
 	height: 65.5vw;
 	margin-bottom: 30px;
@@ -1014,6 +1058,7 @@ ul.breadcrumb {
 	list-style: none;
 	background-color: rgb(35, 31, 32);
 	color: white;
+	white-space: nowrap;
 }
 
 ul.breadcrumb li {
@@ -1154,7 +1199,7 @@ fieldset.room label {
 	margin-bottom: 0;
 }
 
-.choose-variation .price {
+.choose-variation .total > .price {
 	margin-bottom: 20px;
 }
 
@@ -1162,7 +1207,7 @@ fieldset.room label {
 	background-color: rgb(233, 30, 145);
 }
 
-.choose-variation .total {
+.choose-variation form {
 	padding-bottom: 20px;
 }
 
@@ -1595,4 +1640,45 @@ ul.parameters li {
 
 .select-content:not(.active) {
 	display: none;
+}
+
+.faq .content .item a::after {
+	content: ' →'
+}
+
+.pagination {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.faq .pagination {
+	margin-bottom: 30px;
+}
+
+.pagination a {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	text-align: center;
+	text-decoration: none;
+	background-color: white;
+	color: rgb(111, 28, 112)
+}
+
+.pagination a:not(:last-of-type) {
+	margin-right: 5px;
+}
+
+.pagination a:not([href]) {
+	background-color: rgb(111, 28, 112);
+	color: white;
+}
+
+.pagination .prev::before {
+	content: '\00AB'
+}
+
+.pagination .next::before {
+	content: '\00BB'
 }
