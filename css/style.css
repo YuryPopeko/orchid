@@ -269,7 +269,7 @@ section.preview > img {
 	padding-top: 120px;
 }
 
-.bar-menu .content {
+.content {
 	padding-bottom: 20px;
 }
 
@@ -289,6 +289,10 @@ section.preview > img {
 .vacancies section.preview {
 	background-image: url(../images/preview-vacancies.jpg);
 	padding-top: 180px;
+}
+
+.vacancies .content {
+	padding-bottom: 0;
 }
 
 .girls section.preview {
@@ -356,7 +360,6 @@ h1.single {
 .reviews .content,
 .faq .content {
 	background-color: rgb(245, 245, 245);
-	padding-bottom: 35px;
 }
 
 .reviews .content .item:not(:last-of-type),
@@ -384,10 +387,18 @@ h1.single {
 	margin-bottom: 0;
 }
 
+.question-answer .answer {
+	margin-bottom: 20px;
+}
+
 .question-answer .answer div {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	align-content: flex-start;
 	flex-wrap: wrap;
+	height: 60px;
+	margin-bottom: 10px;
 }
 
 .question-answer .answer img {
@@ -407,14 +418,13 @@ h1.single {
 	margin-bottom: 5px;
 }
 
-.reviews time {
-	font-size: 18px;
-	color: rgb(233, 30, 145);
+time {
+	color: rgb(111, 28, 112);
 }
 
+.reviews time,
 .faq time {
 	font-size: 18px;
-	color: rgb(111, 28, 112);
 }
 
 .faq .content .item a {
@@ -556,12 +566,7 @@ div.modal-gallery {
 	background-color: black;
 }
 
-iframe {
-	border: 0;
-}
-
 .modal-tour iframe {
-	width: 100%;
 	height: 100%;
 }
 
@@ -605,7 +610,6 @@ div[class*='modal-'] .owl-carousel {
 
 [class*='resume'] .content {
 	padding-top: 20px;
-	padding-bottom: 20px;
 	background-color: rgb(237, 237, 237);
 }
 
@@ -836,8 +840,11 @@ a.btn:active {
 	text-decoration: none;
 	font-size: 18px;
 	line-height: 1.3;
-	margin-bottom: 20px;
 	position: relative;
+}
+
+.output a:not(:last-of-type) {
+	margin-bottom: 20px;
 }
 
 .output a img {
@@ -1051,6 +1058,7 @@ footer a {
 }
 
 ul.breadcrumb {
+	min-height: 50px;
 	margin-top: 0;
 	margin-bottom: 0;
 	padding-right: 6.25vw;
@@ -1059,6 +1067,7 @@ ul.breadcrumb {
 	background-color: rgb(35, 31, 32);
 	color: white;
 	white-space: nowrap;
+	overflow-x: hidden;
 }
 
 ul.breadcrumb li {
@@ -1219,6 +1228,7 @@ fieldset.room label {
 
 iframe {
 	border: 0;
+	width: 100%;
 }
 
 .video iframe {
@@ -1226,7 +1236,7 @@ iframe {
 	min-height: 210px;
 }
 
-section.saunas .item {
+section.saunas .item:not(:last-of-type) {
 	padding-bottom: 20px;
 }
 
@@ -1269,13 +1279,13 @@ section.saunas a.btn {
 
 .actions .item {
 	display: block;
-	padding-bottom: 20px;
 	text-decoration: none;
 	color: inherit;
 }
 
 .actions .item:not(:last-of-type) {
 	border-bottom: 1px solid rgb(237, 237, 237);
+	padding-bottom: 20px;
 }
 
 .actions .item:not(:first-of-type) {
@@ -1298,13 +1308,16 @@ section.saunas a.btn {
 	margin-bottom: 0;
 }
 
-.gallery .content img {
+.action .content p:last-child {
+	margin-bottom: 0;
+}
+
+.gallery [data-fancybox] img {
 	float: left;
 }
 
 .girls .content {
 	background-color: rgb(237, 237, 237);
-	padding-bottom: 20px;
 }
 
 .girls .content .fade span {
@@ -1317,10 +1330,6 @@ section.saunas a.btn {
 
 .girls .content .btn {
 	background-color: rgb(233, 30, 145);
-}
-
-.certificate .content {
-	padding-bottom: 20px;
 }
 
 .certificate .content .item:not(:last-of-type) {
@@ -1424,7 +1433,7 @@ a[href^='mailto:'].circle-icon::before {
 	text-decoration: none;
 }
 
-.contacts .content + section #map {
+.contacts .content + #map {
 	height: calc(100vh - 75px);
 	margin-bottom: 0;
 }
@@ -1583,7 +1592,6 @@ ul.parameters li {
 
 .girl .content {
 	padding-top: 0;
-	padding-bottom: 20px;
 }
 
 .girl .bulleted li {
@@ -1649,9 +1657,6 @@ ul.parameters li {
 .pagination {
 	display: flex;
 	justify-content: flex-end;
-}
-
-.faq .pagination {
 	margin-bottom: 30px;
 }
 
@@ -1681,4 +1686,55 @@ ul.parameters li {
 
 .pagination .next::before {
 	content: '\00BB'
+}
+
+.blog .item:not(:last-of-type) {
+	margin-bottom: 30px;
+}
+
+.blog a.to-post {
+	display: block;
+	color: initial;
+	text-decoration: none;
+}
+
+a.category {
+	text-decoration: none;
+	color: rgb(111, 28, 112);
+}
+
+.blog a.to-post h2 {
+	margin-bottom: 10px;
+}
+
+.meta svg {
+	font-size: 20px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.meta form svg {
+	margin-right: 0;
+}
+
+.meta form button {
+	margin-right: 5px;
+	background-color: transparent;
+	color: inherit;
+	font-size: inherit;
+}
+
+.stats {
+	color: rgb(148, 148, 148);
+	display: flex;
+	float: right;
+}
+
+.stats-item:not(:last-child) {
+	margin-right: 10px;
+}
+
+.meta > span {
+	display: inline-block;
+	margin-bottom: 10px;
 }

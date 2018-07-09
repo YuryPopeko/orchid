@@ -14,6 +14,16 @@ document.write('\
 					<li><a href="reviews.html">Отзывы</a></li>\
 					<li><a href="bar-menu.html">Меню бара</a></li>\
 					<li><a href="faq.html">Вопросы и ответы</a></li>\
+					<li>\
+						<button type="button" class="submenu">Блог<svg class="icon"><use xlink:href="#icon-arrow"></use></svg></button>\
+						<ul class="submenu">\
+							<li><button type="button" class="back"><svg class="icon"><use xlink:href="#icon-arrow"></use></svg>Вернуться назад</button></li>\
+							<li><a href="blog.html">Все</a></li>\
+							<li><a href="blog.html">Эротический массаж</a></li>\
+							<li><a href="blog.html">Массаж для женщин</a></li>\
+							<li><a href="blog.html">Массаж для мужчин</a></li>\
+						</ul>\
+					</li>\
 					<li class="all"><a href="price-list.html" class="btn">Смотреть прайс-лист услуг</a></li>\
 				</ul>\
 			</li>\
