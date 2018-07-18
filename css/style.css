@@ -1061,18 +1061,15 @@ ul.breadcrumb {
 	min-height: 50px;
 	margin-top: 0;
 	margin-bottom: 0;
-	padding-right: 6.25vw;
-	padding-left: 6.25vw;
+	padding: 13px 6.25vw;
 	list-style: none;
 	background-color: rgb(35, 31, 32);
 	color: white;
-	white-space: nowrap;
 	overflow-x: hidden;
 }
 
 ul.breadcrumb li {
 	display: inline;
-	line-height: 50px;
 }
 
 ul.breadcrumb li + li::before {
